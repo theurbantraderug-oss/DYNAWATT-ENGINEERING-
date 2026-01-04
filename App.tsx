@@ -67,8 +67,8 @@ function App() {
       image: "/images/project-solar.jpg"
     },
     {
-      title: "Commercial Building Wiring",
-      category: "Commercial",
+      title: "Residential Lighting Exterior",
+      category: "Lighting",
       location: "Kitukutwe, Kira",
       image: "/images/project-commercial.jpg"
     },
@@ -94,9 +94,45 @@ function App() {
 
   const reviews = [
     {
+      name: "Hajji Farouk",
+      location: "Kajansi",
+      text: "Excellent work installing lightning arrestors at my property. Very professional and safety-conscious team. Highly recommended.",
+      initial: "H"
+    },
+    {
+      name: "Aisha N.",
+      location: "Kawuku, Entebbe Road",
+      text: "Dynawatt handled the complete wiring for my rentals. They finished on time and the workmanship is very neat.",
+      initial: "A"
+    },
+    {
+      name: "Hajji Hassan",
+      location: "Kitukutwe, Kira Municipality",
+      text: "The profile lighting installed at my home is beautiful. They really know how to bring out the elegance of a house.",
+      initial: "H"
+    },
+    {
+      name: "Three 60inc",
+      location: "Nkrumah Road",
+      text: "We hired them for office wiring modification and lighting for our advertising agency. Great service for businesses.",
+      initial: "T"
+    },
+    {
+      name: "Alex",
+      location: "Salaama Road",
+      text: "I hired them for house wiring and lighting installation. Very reliable, affordable, and transparent with costs.",
+      initial: "A"
+    },
+    {
+      name: "Silverline Ssingo Country Hotel",
+      location: "Kiboga",
+      text: "Professional light installation for our hotel. The team was efficient and the lighting looks perfect.",
+      initial: "S"
+    },
+    {
       name: "Sarah K.",
       location: "Ntinda, Kampala",
-      text: "Dynawatt rewired my entire house after we had issues with constantly tripping power. Professional, clean, and very knowledgeable. Highly recommended!",
+      text: "Dynawatt rewired my entire house after we had issues with constantly tripping power. Professional, clean, and very knowledgeable.",
       initial: "S"
     },
     {
@@ -317,6 +353,7 @@ function App() {
                     <img 
                       src="/images/service-residential.jpg" 
                       alt="Residential Wiring" 
+                      loading="lazy"
                       className="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" 
                     />
                     <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center text-amber-600 shadow-sm">
@@ -329,7 +366,7 @@ function App() {
                     <ul className="text-base text-slate-600 space-y-2 font-medium mt-auto">
                       <li className="flex items-center"><Icons.CheckCircle className="h-4 w-4 mr-2 text-green-500"/> Full House Wiring</li>
                       <li className="flex items-center"><Icons.CheckCircle className="h-4 w-4 mr-2 text-green-500"/> Fuse Box Upgrades</li>
-                      <li className="flex items-center"><Icons.CheckCircle className="h-4 w-4 mr-2 text-green-500"/> Yaka Meter Help</li>
+                      <li className="flex items-center"><Icons.CheckCircle className="h-4 w-4 mr-2 text-green-500"/> Yaka (UEDCL) Meter Help</li>
                     </ul>
                   </div>
                 </div>
@@ -341,6 +378,7 @@ function App() {
                     <img 
                       src="/images/service-solar.jpg" 
                       alt="Solar Systems" 
+                      loading="lazy"
                       className="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" 
                     />
                      <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center text-amber-600 shadow-sm">
@@ -364,6 +402,7 @@ function App() {
                     <img 
                       src="/images/service-commercial.jpg" 
                       alt="3 Phase Systems" 
+                      loading="lazy"
                       className="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" 
                     />
                      <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center text-amber-600 shadow-sm">
@@ -387,6 +426,7 @@ function App() {
                     <img 
                       src="/images/service-generator.jpg" 
                       alt="Generator Repair" 
+                      loading="lazy"
                       className="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" 
                     />
                      <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center text-amber-600 shadow-sm">
@@ -410,6 +450,7 @@ function App() {
                     <img 
                       src="/images/service-maintenance.jpg" 
                       alt="General Maintenance" 
+                      loading="lazy"
                       className="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" 
                     />
                      <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center text-amber-600 shadow-sm">
@@ -432,6 +473,7 @@ function App() {
                     <img 
                       src="/images/service-security.jpg" 
                       alt="CCTV & Security" 
+                      loading="lazy"
                       className="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" 
                     />
                      <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center text-amber-600 shadow-sm">
@@ -486,6 +528,7 @@ function App() {
                       <img 
                         src={project.image} 
                         alt={project.title} 
+                        loading="lazy"
                         className="w-full h-full object-cover transform group-hover:scale-105 transition duration-500" 
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">

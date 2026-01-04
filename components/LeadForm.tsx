@@ -149,7 +149,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ addLead }) => {
               <option value="Emergency">Emergency Repair</option>
               <option value="Solar">Solar Installation</option>
               <option value="Security">CCTV & Security</option>
-              <option value="Yaka">Yaka Meter Issues</option>
+              <option value="Yaka">Yaka (UEDCL) Meter Issues</option>
               <option value="Inverter">Inverter/Battery</option>
             </select>
           </div>

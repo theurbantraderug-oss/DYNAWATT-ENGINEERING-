@@ -22,7 +22,7 @@ const ServicesDetail: React.FC<ServicesDetailProps> = ({ setPage }) => {
         "Chandelier & Mood Lighting Installation",
         "Socket & Switch Additions",
         "Earthing & Lightning Protection Systems",
-        "Yaka Meter Troubleshooting"
+        "Yaka (UEDCL) Meter Troubleshooting"
       ]
     },
     {

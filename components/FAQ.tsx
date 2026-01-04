@@ -44,8 +44,8 @@ const FAQ: React.FC = () => {
 
   const faqs = [
     {
-      question: "My Yaka meter is rejecting tokens, what should I do?",
-      answer: "If your Yaka meter rejects tokens, first check for 'Error' codes on the screen. It could be a network issue, a locked meter (tamper mode), or unpaid debts. Try resetting your CIU (Customer Interface Unit). If the problem persists, you may need a certified electrician to check for wiring faults triggering the tamper mode, or contact Umeme support."
+      question: "My Yaka (UEDCL) meter is rejecting tokens, what should I do?",
+      answer: "If your Yaka (UEDCL) meter rejects tokens, first check for 'Error' codes on the screen. It could be a network issue, a locked meter (tamper mode), or unpaid debts. Try resetting your CIU (Customer Interface Unit). If the problem persists, you may need a certified electrician to check for wiring faults triggering the tamper mode, or contact Umeme (UEDCL) support."
     },
     {
       question: "Do you offer emergency electrical services at night?",
