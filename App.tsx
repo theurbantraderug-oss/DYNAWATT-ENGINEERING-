@@ -57,37 +57,37 @@ function App() {
       title: "Modern Residential Lighting",
       category: "Residential",
       location: "Salaama, Makindye",
-      image: "/project-lighting.jpg"
+      image: "/images/project-lighting.jpg"
     },
     {
       title: "Hybrid Solar System Setup",
       category: "Solar",
       location: "Kira Municipality",
-      image: "/project-solar.jpg"
+      image: "/images/project-solar.jpg"
     },
     {
       title: "Commercial Building Wiring",
       category: "Commercial",
       location: "Kitukutwe, Kira",
-      image: "/project-commercial.jpg"
+      image: "/images/project-commercial.jpg"
     },
     {
       title: "Slab Work Piping",
       category: "Construction",
       location: "Mukono",
-      image: "/project-construction.jpg"
+      image: "/images/project-construction.jpg"
     },
     {
       title: "Profile Lighting",
       category: "Lighting",
       location: "Matuga",
-      image: "/project-pillar-light.jpg"
+      image: "/images/project-pillar-light.jpg"
     },
     {
       title: "Complete House Wiring",
       category: "Residential",
       location: "Biira",
-      image: "/project-finished-house.jpg"
+      image: "/images/project-finished-house.jpg"
     }
   ];
 
@@ -332,7 +332,7 @@ function App() {
                 <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group border border-slate-200 flex flex-col">
                   <div className="h-56 overflow-hidden relative">
                     <img 
-                      src="/service-residential.jpg" 
+                      src="/images/service-residential.jpg" 
                       alt="Residential Wiring" 
                       className="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" 
                     />
@@ -356,7 +356,7 @@ function App() {
                   <div className="absolute top-4 left-4 bg-amber-500 text-xs font-bold px-3 py-1 text-white rounded-full z-10">POPULAR</div>
                   <div className="h-56 overflow-hidden relative">
                     <img 
-                      src="/service-solar.jpg" 
+                      src="/images/service-solar.jpg" 
                       alt="Solar Systems" 
                       className="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" 
                     />
@@ -379,7 +379,7 @@ function App() {
                 <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group border border-slate-200 flex flex-col">
                   <div className="h-56 overflow-hidden relative">
                     <img 
-                      src="/service-commercial.jpg" 
+                      src="/images/service-commercial.jpg" 
                       alt="3 Phase Systems" 
                       className="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" 
                     />
@@ -402,7 +402,7 @@ function App() {
                 <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group border border-slate-200 flex flex-col">
                   <div className="h-56 overflow-hidden relative">
                     <img 
-                      src="/service-generator.jpg" 
+                      src="/images/service-generator.jpg" 
                       alt="Generator Repair" 
                       className="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" 
                     />
@@ -425,7 +425,7 @@ function App() {
                 <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group border border-slate-200 flex flex-col">
                   <div className="h-56 overflow-hidden relative">
                     <img 
-                      src="/service-maintenance.jpg" 
+                      src="/images/service-maintenance.jpg" 
                       alt="General Maintenance" 
                       className="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" 
                     />
@@ -447,7 +447,7 @@ function App() {
                 <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group border border-slate-200 flex flex-col">
                   <div className="h-56 overflow-hidden relative">
                     <img 
-                      src="/service-security.jpg" 
+                      src="/images/service-security.jpg" 
                       alt="CCTV & Security" 
                       className="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" 
                     />
