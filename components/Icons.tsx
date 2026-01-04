@@ -30,7 +30,11 @@ import {
   Wallet,
   Facebook,
   Instagram,
-  Map
+  Map,
+  ChevronDown,
+  ChevronUp,
+  HelpCircle,
+  Star
 } from 'lucide-react';
 
 export const Icons = {
@@ -65,5 +69,9 @@ export const Icons = {
   Wallet,
   Facebook,
   Instagram,
-  Map
+  Map,
+  ChevronDown,
+  ChevronUp,
+  HelpCircle,
+  Star
 };

@@ -44,19 +44,24 @@ const Navbar: React.FC<NavbarProps> = ({ setPage, contactPhone }) => {
     e.preventDefault();
     setIsOpen(false);
     
-    const element = document.getElementById(id);
-    if (element) {
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.scrollY - navbarHeight;
+    // Switch to Home page first
+    setPage(Page.HOME);
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    } else if (id === 'home') { // Fallback for home if element not found (e.g., in some edge cases)
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-    setPage(Page.HOME); // Always set page to HOME when navigating sections on public site
+    // Use timeout to allow Home page to render if we were on another page
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - navbarHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      } else if (id === 'home') { 
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   const NavLink = ({ id, label, isMobile = false }: { id: string, label: string, isMobile?: boolean }) => {
@@ -103,10 +108,11 @@ const Navbar: React.FC<NavbarProps> = ({ setPage, contactPhone }) => {
             className="flex-shrink-0 flex items-center cursor-pointer group"
             onClick={(e) => scrollToSection(e, 'home')}
           >
-            <Icons.Zap className="h-8 w-8 text-amber-500 mr-2 group-hover:scale-110 transition-transform" />
-            <span className="font-bold text-2xl tracking-tight uppercase">
-              DYNA<span className="text-amber-500">WATT</span>
-            </span>
+            <img 
+              src="/logo.png" 
+              alt="DYNAWATT ENGINEERING" 
+              className="h-16 w-auto object-contain group-hover:scale-105 transition-transform" 
+            />
           </div>
 
           {/* Desktop Menu */}
