@@ -10,6 +10,7 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ setPage, contactPhone }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [logoError, setLogoError] = useState(false);
   const whatsappMessage = encodeURIComponent("Hello, Im interested in working with DYNAWATT ENGINEERING. Is anyone available to chat");
 
   const navbarHeight = 80; // Height of the fixed navbar
@@ -108,11 +109,19 @@ const Navbar: React.FC<NavbarProps> = ({ setPage, contactPhone }) => {
             className="flex-shrink-0 flex items-center cursor-pointer group"
             onClick={(e) => scrollToSection(e, 'home')}
           >
-            <img 
-              src="/logo.png" 
-              alt="DYNAWATT ENGINEERING" 
-              className="h-16 w-auto object-contain group-hover:scale-105 transition-transform" 
-            />
+            {!logoError ? (
+              <img 
+                src="/logo.png" 
+                alt="DYNAWATT ENGINEERING" 
+                className="h-16 w-auto object-contain group-hover:scale-105 transition-transform" 
+                onError={() => setLogoError(true)}
+              />
+            ) : (
+              <div className="flex flex-col justify-center">
+                <span className="text-2xl font-bold text-white leading-none tracking-tight">DYNAWATT</span>
+                <span className="text-[10px] text-amber-500 tracking-[0.2em] font-semibold">ENGINEERING</span>
+              </div>
+            )}
           </div>
 
           {/* Desktop Menu */}

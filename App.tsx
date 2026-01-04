@@ -11,6 +11,7 @@ import { Lead, Page, SiteConfig } from './types';
 function App() {
   const [page, setPage] = useState<Page>(Page.HOME);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   
   // Site Configuration State (Simulating DB settings)
   const [config, setConfig] = useState<SiteConfig>({
@@ -93,40 +94,22 @@ function App() {
 
   const reviews = [
     {
-      name: "Hajji Farouk",
-      location: "Kajansi",
-      text: "I hired Dynawatt for lightning arrestor installation at my property in Kajansi. Their technical knowledge on earthing systems is impressive. I feel much safer now during storms.",
-      initial: "H"
-    },
-    {
-      name: "Aisha",
-      location: "Kawuku, Entebbe Road",
-      text: "They did the complete wiring for my rental units. The work was very neat, passed all inspections, and they used genuine cables as promised. Highly recommended for landlords.",
-      initial: "A"
-    },
-    {
-      name: "Hajji Jutide",
-      location: "Kitukutwe, Kira Municipality",
-      text: "The profile lighting they installed in my home is stunning. It completely transformed the look of my living room. Very modern, clean work, and great attention to detail.",
-      initial: "H"
-    },
-    {
-      name: "Three 60inc",
-      location: "Nkrumah Road",
-      text: "As an advertising agency, we needed urgent wiring modifications and lighting upgrades. Dynawatt worked efficiently without disrupting our operations. Professional corporate service.",
-      initial: "T"
-    },
-    {
-      name: "Alex",
-      location: "Salaama Road",
-      text: "Dynawatt handled the full house wiring and lighting installation for my home. The pricing was honest, and the engineers were very respectful and skilled throughout the project.",
-      initial: "A"
-    },
-    {
-      name: "Silverline Ssingo Country Hotel",
-      location: "Kiboga",
-      text: "We contracted them for a major light installation project at our hotel. They handled the large scale professionally and the new lighting design has greatly improved our guest experience.",
+      name: "Sarah K.",
+      location: "Ntinda, Kampala",
+      text: "Dynawatt rewired my entire house after we had issues with constantly tripping power. Professional, clean, and very knowledgeable. Highly recommended!",
       initial: "S"
+    },
+    {
+      name: "James M.",
+      location: "Entebbe",
+      text: "The solar installation they did for my farm is working perfectly. I no longer worry about power outages affecting my business.",
+      initial: "J"
+    },
+    {
+      name: "Prossy N.",
+      location: "Kira",
+      text: "Quick response when I had an emergency with my water heater. The electrician explained everything clearly and fixed it in no time.",
+      initial: "P"
     }
   ];
 
@@ -496,12 +479,18 @@ function App() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {projects.map((project, index) => (
                   <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col group border border-slate-100">
-                    <div className="relative h-64 overflow-hidden">
+                    <div 
+                      className="relative h-64 overflow-hidden cursor-pointer"
+                      onClick={() => setSelectedImage(project.image)}
+                    >
                       <img 
                         src={project.image} 
                         alt={project.title} 
                         className="w-full h-full object-cover transform group-hover:scale-105 transition duration-500" 
                       />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+                        <Icons.Maximize2 className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 h-10 w-10 drop-shadow-lg" />
+                      </div>
                       <div className="absolute top-4 right-4 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
                         {project.category}
                       </div>
@@ -671,6 +660,27 @@ function App() {
       ) : page === Page.SERVICES ? (
         <ServicesDetail setPage={setPage} />
       ) : null}
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm transition-opacity duration-300"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button 
+            className="absolute top-4 right-4 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-2 transition-all"
+            onClick={() => setSelectedImage(null)}
+          >
+            <Icons.X className="h-8 w-8" />
+          </button>
+          <img 
+            src={selectedImage} 
+            alt="Full View" 
+            className="max-w-full max-h-[90vh] object-contain rounded-md shadow-2xl animate-in fade-in zoom-in duration-300"
+            onClick={(e) => e.stopPropagation()} 
+          />
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">

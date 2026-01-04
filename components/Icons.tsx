@@ -34,7 +34,8 @@ import {
   ChevronDown,
   ChevronUp,
   HelpCircle,
-  Star
+  Star,
+  Maximize2
 } from 'lucide-react';
 
 export const Icons = {
@@ -73,5 +74,6 @@ export const Icons = {
   ChevronDown,
   ChevronUp,
   HelpCircle,
-  Star
+  Star,
+  Maximize2
 };
