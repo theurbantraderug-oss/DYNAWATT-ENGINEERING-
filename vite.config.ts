@@ -11,8 +11,6 @@ export default defineConfig(({ mode }) => {
     define: {
       // Replace process.env.API_KEY with the actual value during build
       'process.env.API_KEY': JSON.stringify(env.API_KEY),
-      // Polyfill process.env to prevent runtime errors for other env access
-      'process.env': {}
     },
     build: {
       outDir: 'dist',
