@@ -7,10 +7,12 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, (process as any).cwd(), '');
 
   return {
+    base: '/', // Fixes blank screen by ensuring assets are loaded from root
     plugins: [react()],
     define: {
       // Replace process.env.API_KEY with the actual value during build
-      'process.env.API_KEY': JSON.stringify(env.API_KEY),
+      // Default to empty string to prevent "undefined" crashes during build
+      'process.env.API_KEY': JSON.stringify(env.API_KEY || ""),
     },
     build: {
       outDir: 'dist',
