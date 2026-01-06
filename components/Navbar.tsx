@@ -18,7 +18,7 @@ const Navbar: React.FC<NavbarProps> = ({ setPage, contactPhone }) => {
   // Handle scroll spy to update active section
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'services', 'about', 'areas'];
+      const sections = ['home', 'services', 'about', 'reviews', 'areas', 'quote'];
       // Offset to trigger active state slightly before the section hits the top
       const scrollPosition = window.scrollY + navbarHeight + 50; // Increased offset for better feel
 
@@ -125,13 +125,15 @@ const Navbar: React.FC<NavbarProps> = ({ setPage, contactPhone }) => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-2 items-center">
+          <div className="hidden md:flex space-x-1 lg:space-x-2 items-center">
             <NavLink id="home" label="Home" />
             <NavLink id="services" label="Services" />
-            <NavLink id="about" label="Why Choose Us" />
+            <NavLink id="about" label="About" />
+            <NavLink id="reviews" label="Reviews" />
             <NavLink id="areas" label="Areas" />
+            <NavLink id="quote" label="Contact" />
             
-            <div className="flex items-center space-x-3 ml-4 pl-4 border-l border-slate-700">
+            <div className="flex items-center space-x-2 lg:space-x-3 ml-2 lg:ml-4 pl-2 lg:pl-4 border-l border-slate-700">
               <a 
                 href={`https://wa.me/${contactPhone.replace(/[^0-9]/g, '')}?text=${whatsappMessage}`}
                 target="_blank"
@@ -143,7 +145,7 @@ const Navbar: React.FC<NavbarProps> = ({ setPage, contactPhone }) => {
               </a>
               <a 
                 href={`tel:${contactPhone.replace(/[^0-9+]/g, '')}`}
-                className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-2 px-6 rounded-full transition transform hover:scale-105 flex items-center shadow-lg hover:shadow-amber-500/20"
+                className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-2 px-4 lg:px-6 rounded-full transition transform hover:scale-105 flex items-center shadow-lg hover:shadow-amber-500/20 text-sm lg:text-base"
               >
                 <Icons.Phone className="h-4 w-4 mr-2" />
                 {contactPhone}
@@ -173,8 +175,10 @@ const Navbar: React.FC<NavbarProps> = ({ setPage, contactPhone }) => {
         <div className="px-4 py-6 space-y-2">
           <NavLink id="home" label="Home" isMobile />
           <NavLink id="services" label="Services" isMobile />
-          <NavLink id="about" label="Why Choose Us" isMobile />
+          <NavLink id="about" label="About Us" isMobile />
+          <NavLink id="reviews" label="Reviews" isMobile />
           <NavLink id="areas" label="Service Areas" isMobile />
+          <NavLink id="quote" label="Contact" isMobile />
           
           <div className="flex flex-col gap-3 mt-6 pt-6 border-t border-slate-800">
             <a 
