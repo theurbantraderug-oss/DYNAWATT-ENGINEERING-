@@ -35,7 +35,11 @@ import {
   ChevronUp,
   HelpCircle,
   Star,
-  Maximize2
+  Maximize2,
+  Thermometer,
+  Plug,
+  Droplets,
+  BatteryCharging
 } from 'lucide-react';
 
 export const Icons = {
@@ -75,5 +79,9 @@ export const Icons = {
   ChevronUp,
   HelpCircle,
   Star,
-  Maximize2
+  Maximize2,
+  Thermometer,
+  Plug,
+  Droplets,
+  BatteryCharging
 };

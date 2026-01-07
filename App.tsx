@@ -5,6 +5,7 @@ import AdminDashboard from './components/AdminDashboard';
 import AdminLogin from './components/AdminLogin';
 import FAQ from './components/FAQ';
 import ServicesDetail from './components/ServicesDetail';
+import SafetyChecklist from './components/SafetyChecklist';
 import { Icons } from './components/Icons';
 import { Lead, Page, SiteConfig } from './types';
 
@@ -639,6 +640,9 @@ function App() {
               </div>
             </div>
           </section>
+
+          {/* New Safety Checklist Section */}
+          <SafetyChecklist />
 
           {/* FAQ Section */}
           <FAQ />
