@@ -12,26 +12,26 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, toggle }) =
   return (
     <div className="border-b border-slate-200 last:border-0">
       <button
-        className="w-full py-5 flex justify-between items-center text-left focus:outline-none group"
+        className="w-full py-4 md:py-5 flex justify-between items-center text-left focus:outline-none group"
         onClick={toggle}
       >
-        <span className={`text-lg font-semibold transition-colors duration-300 ${isOpen ? 'text-amber-600' : 'text-slate-800 group-hover:text-amber-600'}`}>
+        <span className={`text-base md:text-lg font-semibold transition-colors duration-300 ${isOpen ? 'text-amber-600' : 'text-slate-800 group-hover:text-amber-600'}`}>
           {question}
         </span>
         <div className={`ml-4 flex-shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
           {isOpen ? (
-            <Icons.ChevronUp className="h-5 w-5 text-amber-500" />
+            <Icons.ChevronUp className="h-4 w-4 md:h-5 md:w-5 text-amber-500" />
           ) : (
-            <Icons.ChevronDown className="h-5 w-5 text-slate-400 group-hover:text-amber-500" />
+            <Icons.ChevronDown className="h-4 w-4 md:h-5 md:w-5 text-slate-400 group-hover:text-amber-500" />
           )}
         </div>
       </button>
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? 'max-h-96 opacity-100 mb-6' : 'max-h-0 opacity-0'
+          isOpen ? 'max-h-96 opacity-100 mb-4 md:mb-6' : 'max-h-0 opacity-0'
         }`}
       >
-        <p className="text-slate-600 leading-relaxed pr-12">
+        <p className="text-slate-600 leading-relaxed pr-8 md:pr-12 text-sm md:text-base">
           {answer}
         </p>
       </div>
@@ -66,19 +66,19 @@ const FAQ: React.FC = () => {
   ];
 
   return (
-    <section id="faq" className="py-20 bg-slate-50 scroll-mt-24 border-t border-slate-200">
+    <section id="faq" className="py-12 md:py-20 bg-slate-50 scroll-mt-24 border-t border-slate-200">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 md:mb-12">
           <div className="inline-flex items-center justify-center p-2 bg-amber-100 rounded-full mb-4">
             <Icons.HelpCircle className="h-6 w-6 text-amber-600" />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
             Answers to common questions about electrical safety, installation, and maintenance in Uganda.
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 md:p-8">
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-5 md:p-8">
           {faqs.map((faq, index) => (
             <FAQItem
               key={index}
@@ -90,8 +90,8 @@ const FAQ: React.FC = () => {
           ))}
         </div>
         
-        <div className="mt-10 text-center">
-          <p className="text-slate-600">
+        <div className="mt-8 md:mt-10 text-center">
+          <p className="text-slate-600 text-sm md:text-base">
             Have a different question? 
             <a href="#quote" className="text-amber-600 font-bold hover:underline ml-2">Ask us directly</a>
           </p>

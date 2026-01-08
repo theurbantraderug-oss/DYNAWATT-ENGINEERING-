@@ -151,30 +151,31 @@ function App() {
   ];
 
   // Grouped areas for better display and structure
+  // Optimized for user scanning and local grouping
   const serviceAreas = [
     {
       region: "Kira & Namugongo Area",
       areas: ["Kira", "Kyanja", "Namugongo", "Najjera", "Bulindo", "Kiwatule", "Kitukutwe", "Kitifumba", "Bulwada", "Bulabira"]
     },
     {
-      region: "Entebbe Road Corridor",
-      areas: ["Entebbe", "Kisubi", "Kawuku", "Kajjansi", "Lweza", "Seguku", "Zanna", "Katale", "Dewe", "Bwebajja"]
+      region: "Entebbe Rd & Ssabagabo",
+      areas: ["Entebbe", "Kisubi", "Kawuku", "Kajjansi", "Lweza", "Seguku", "Zanna", "Katale", "Dewe", "Bwebajja", "Ndejje", "Namasuba"]
     },
     {
       region: "Makindye & Ggaba Road",
-      areas: ["Makindye", "Munyonyo", "Ggaba", "Buziga", "Bunga", "Kansanga", "Kabalagala", "Muyenga", "Bukaasa", "Nsambya", "Kibuli", "Salama", "Konge", "Busabala"]
+      areas: ["Makindye", "Munyonyo", "Ggaba", "Buziga", "Bunga", "Kansanga", "Kabalagala", "Muyenga", "Bukaasa", "Nsambya", "Kibuli", "Salama", "Konge", "Busabala", "Kibiiri", "Gangu", "Masajja", "Kabuuma"]
     },
     {
-      region: "Northern Bypass & East",
-      areas: ["Ntinda", "Bukoto", "Kisasi", "Bweyogerere", "Butabika", "Luzira", "Mutungo", "Kitintale", "Bugolobi", "Mbuya", "Bukerere"]
+      region: "Mukono & East",
+      areas: ["Mukono", "Seeta", "Kisoga", "Ntinda", "Bukoto", "Kisasi", "Bweyogerere", "Butabika", "Luzira", "Mutungo", "Kitintale", "Bugolobi", "Mbuya", "Bukerere"]
     },
     {
       region: "Gayaza & Northern",
-      areas: ["Gayaza", "Kasangati", "Kiwenda", "Mpererwe", "Kanyanya", "Bahai", "Kabuuma", "Maganjo", "Matugga"]
+      areas: ["Gayaza", "Kasangati", "Kiwenda", "Mpererwe", "Kanyanya", "Bahai", "Maganjo", "Matugga", "Kawempe", "Kigogwa", "Kiteezi"]
     },
     {
-      region: "Masaka Road & West",
-      areas: ["Mpigi", "Kyengera", "Kitemu", "Nansana", "Busega", "Bulenga", "Kibiri", "Gangu"]
+      region: "Western Routes (Masaka/Mityana)",
+      areas: ["Mpigi", "Kyengera", "Kitemu", "Nansana", "Busega", "Bulenga", "Buloba", "Buyala", "Kiboga"]
     }
   ];
 
@@ -214,7 +215,7 @@ function App() {
       {page === Page.HOME ? (
         <>
           {/* Hero Section */}
-          <header id="home" className="relative bg-slate-900 text-white pt-20 pb-32 overflow-hidden">
+          <header id="home" className="relative bg-slate-900 text-white pt-24 pb-16 md:pt-20 md:pb-32 overflow-hidden">
             <div className="absolute inset-0 opacity-20 bg-[url('https://picsum.photos/id/1019/1920/1080')] bg-cover bg-center"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-transparent"></div>
             
@@ -224,21 +225,21 @@ function App() {
                   <span className="flex h-2 w-2 rounded-full bg-amber-500 mr-2"></span>
                   DYNAWATT - Licensed & Insured
                 </div>
-                <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                <h1 className="text-3xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
                   {config.heroHeadline}
                 </h1>
-                <p className="text-xl text-slate-300 mb-8 max-w-lg">
+                <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-lg">
                   Your premier electrical engineering partner in Uganda. Residential wiring, commercial power systems, and solar energy solutions.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="#quote" onClick={scrollToQuote} className="inline-flex justify-center items-center px-8 py-4 border border-transparent text-lg font-bold rounded-lg text-slate-900 bg-amber-500 hover:bg-amber-600 transition shadow-lg hover:shadow-xl">
+                  <a href="#quote" onClick={scrollToQuote} className="inline-flex justify-center items-center px-6 py-3 md:px-8 md:py-4 border border-transparent text-base md:text-lg font-bold rounded-lg text-slate-900 bg-amber-500 hover:bg-amber-600 transition shadow-lg hover:shadow-xl">
                     Get a Quote
                   </a>
                   <a 
                     href={`https://wa.me/${config.whatsapp.replace(/[^0-9]/g, '')}?text=${whatsappMessage}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex justify-center items-center px-8 py-4 border border-green-500 text-lg font-bold rounded-lg text-white bg-green-600 hover:bg-green-700 transition"
+                    className="inline-flex justify-center items-center px-6 py-3 md:px-8 md:py-4 border border-green-500 text-base md:text-lg font-bold rounded-lg text-white bg-green-600 hover:bg-green-700 transition"
                   >
                     <Icons.MessageCircle className="h-5 w-5 mr-2" />
                     WhatsApp
@@ -246,7 +247,7 @@ function App() {
                 </div>
               </div>
               
-              <div className="md:w-1/2 md:pl-10 relative z-10">
+              <div className="md:w-1/2 md:pl-10 relative z-10 w-full">
                 <LeadForm addLead={addLead} />
               </div>
             </div>
@@ -255,56 +256,56 @@ function App() {
           {/* Trust Badges */}
           <div className="bg-slate-100 border-b border-slate-200">
             <div className="max-w-7xl mx-auto px-4 py-8">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-center">
                 <div className="flex flex-col items-center">
-                  <Icons.Shield className="h-8 w-8 text-slate-400 mb-2" />
-                  <span className="font-semibold text-slate-700">Certified Engineers</span>
+                  <Icons.Shield className="h-6 w-6 md:h-8 md:w-8 text-slate-400 mb-2" />
+                  <span className="font-semibold text-slate-700 text-sm md:text-base">Certified Engineers</span>
                 </div>
                 <div className="flex flex-col items-center">
-                  <Icons.Zap className="h-8 w-8 text-slate-400 mb-2" />
-                  <span className="font-semibold text-slate-700">24/7 Support</span>
+                  <Icons.Zap className="h-6 w-6 md:h-8 md:w-8 text-slate-400 mb-2" />
+                  <span className="font-semibold text-slate-700 text-sm md:text-base">24/7 Support</span>
                 </div>
                 <div className="flex flex-col items-center">
-                  <Icons.CheckCircle className="h-8 w-8 text-slate-400 mb-2" />
-                  <span className="font-semibold text-slate-700">Quality Guaranteed</span>
+                  <Icons.CheckCircle className="h-6 w-6 md:h-8 md:w-8 text-slate-400 mb-2" />
+                  <span className="font-semibold text-slate-700 text-sm md:text-base">Quality Guaranteed</span>
                 </div>
                 <div className="flex flex-col items-center">
-                  <Icons.MapPin className="h-8 w-8 text-slate-400 mb-2" />
-                  <span className="font-semibold text-slate-700">Ugandan Owned</span>
+                  <Icons.MapPin className="h-6 w-6 md:h-8 md:w-8 text-slate-400 mb-2" />
+                  <span className="font-semibold text-slate-700 text-sm md:text-base">Ugandan Owned</span>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Welcome & Guarantee Section - Enhanced */}
-          <section className="py-20 bg-gradient-to-b from-slate-50 to-white border-b border-slate-100">
+          <section className="py-12 md:py-20 bg-gradient-to-b from-slate-50 to-white border-b border-slate-100">
             <div className="max-w-5xl mx-auto px-4 text-center">
               
-              <div className="inline-flex items-center gap-2 p-2 px-4 bg-amber-50 border border-amber-200 rounded-full text-amber-800 font-bold text-sm mb-8 shadow-sm">
+              <div className="inline-flex items-center gap-2 p-2 px-4 bg-amber-50 border border-amber-200 rounded-full text-amber-800 font-bold text-sm mb-6 md:mb-8 shadow-sm">
                 <Icons.Star className="h-4 w-4 fill-amber-500 text-amber-500" />
                 <span>Welcome to Dynawatt Engineering</span>
               </div>
               
-              <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight tracking-tight">
+              <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight tracking-tight">
                 Certified Electrical Excellence in <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-600">Kampala & Central Uganda</span>
               </h2>
               
-              <p className="text-xl text-slate-600 mb-10 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg md:text-xl text-slate-600 mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed">
                 Your Trusted Partner for Reliable House Wiring, Security Systems, and Quality Electrical Supplies.
               </p>
               
-              <p className="text-slate-600 mb-12 leading-relaxed text-lg max-w-4xl mx-auto font-medium">
+              <p className="text-slate-600 mb-10 md:mb-12 leading-relaxed text-base md:text-lg max-w-4xl mx-auto font-medium">
                 At <strong className="text-slate-900">Dynawatt Engineering</strong>, we don’t just install wires; we power your peace of mind. Whether you are building a new home in <strong className="text-slate-900">Kira</strong>, securing an industrial site in <strong className="text-slate-900">Mukono</strong>, or upgrading your lighting in <strong className="text-slate-900">Kampala</strong>, our certified team is ready to deliver.
               </p>
 
-              <div className="bg-white border-t-4 border-amber-500 rounded-2xl p-8 md:p-12 mb-12 shadow-2xl shadow-slate-200/50 hover:shadow-amber-500/10 transition-all duration-300">
-                <h3 className="text-2xl font-bold text-slate-900 mb-10 flex items-center justify-center">
+              <div className="bg-white border-t-4 border-amber-500 rounded-2xl p-6 md:p-12 mb-12 shadow-2xl shadow-slate-200/50 hover:shadow-amber-500/10 transition-all duration-300">
+                <h3 className="text-2xl font-bold text-slate-900 mb-8 md:mb-10 flex items-center justify-center">
                   <div className="bg-amber-100 p-2 rounded-full mr-3">
                     <Icons.CheckCircle className="h-6 w-6 text-amber-600" />
                   </div>
                   The Dynawatt Difference
                 </h3>
-                <div className="grid md:grid-cols-2 gap-x-12 gap-y-8 text-left">
+                <div className="grid md:grid-cols-2 gap-x-12 gap-y-6 md:gap-y-8 text-left">
                   <div className="flex items-start group">
                     <div className="flex-shrink-0 bg-slate-50 p-3 rounded-xl shadow-sm mr-4 border border-slate-100 group-hover:border-amber-200 group-hover:bg-amber-50 transition-colors">
                       <Icons.Shield className="h-6 w-6 text-amber-500" />
@@ -344,11 +345,11 @@ function App() {
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row justify-center gap-5">
+              <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-5">
                 <a 
                   href="#quote" 
                   onClick={scrollToQuote}
-                  className="group inline-flex justify-center items-center px-8 py-4 text-lg font-bold rounded-xl text-slate-900 bg-amber-500 hover:bg-amber-400 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 ring-4 ring-amber-500/20"
+                  className="group inline-flex justify-center items-center px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-bold rounded-xl text-slate-900 bg-amber-500 hover:bg-amber-400 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 ring-4 ring-amber-500/20"
                 >
                   <span className="flex items-center">
                     Get a Free Quotation
@@ -358,7 +359,7 @@ function App() {
                 
                 <a 
                   href={`tel:${config.contactPhone.replace(/[^0-9+]/g, '')}`} 
-                  className="group inline-flex justify-center items-center px-8 py-4 text-lg font-bold rounded-xl text-white bg-slate-900 hover:bg-slate-800 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
+                  className="group inline-flex justify-center items-center px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-bold rounded-xl text-white bg-slate-900 hover:bg-slate-800 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
                 >
                   <Icons.Phone className="h-5 w-5 mr-2 group-hover:animate-bounce" />
                   Call Us: {config.contactPhone}
@@ -368,17 +369,17 @@ function App() {
           </section>
 
           {/* Services Section */}
-          <section id="services" className="py-20 bg-slate-50 scroll-mt-24">
+          <section id="services" className="py-12 md:py-20 bg-slate-50 scroll-mt-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-16">
+              <div className="text-center mb-10 md:mb-16">
                 <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Services</h2>
-                <p className="text-lg text-slate-600 max-w-2xl mx-auto">From simple socket repairs to complex industrial solar systems, Dynawatt handles it all with professional precision.</p>
+                <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto">From simple socket repairs to complex industrial solar systems, Dynawatt handles it all with professional precision.</p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                 {/* Residential */}
                 <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group border border-slate-200 flex flex-col">
-                  <div className="h-56 overflow-hidden relative">
+                  <div className="h-48 md:h-56 overflow-hidden relative">
                     <img 
                       src="/images/service-residential.jpg" 
                       alt="Residential Wiring" 
@@ -389,10 +390,10 @@ function App() {
                         <Icons.Home className="h-5 w-5" />
                     </div>
                   </div>
-                  <div className="p-8 flex flex-col flex-grow">
-                    <h3 className="text-xl font-bold text-slate-900 mb-3">Residential Wiring</h3>
-                    <p className="text-slate-700 text-base leading-relaxed mb-4">Complete house wiring, socket installation, lighting upgrades, and safety inspections for your home.</p>
-                    <ul className="text-base text-slate-600 space-y-2 font-medium mt-auto">
+                  <div className="p-5 md:p-8 flex flex-col flex-grow">
+                    <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-3">Residential Wiring</h3>
+                    <p className="text-slate-700 text-sm md:text-base leading-relaxed mb-4">Complete house wiring, socket installation, lighting upgrades, and safety inspections for your home.</p>
+                    <ul className="text-sm md:text-base text-slate-600 space-y-2 font-medium mt-auto">
                       <li className="flex items-center"><Icons.CheckCircle className="h-4 w-4 mr-2 text-green-500"/> Full House Wiring</li>
                       <li className="flex items-center"><Icons.CheckCircle className="h-4 w-4 mr-2 text-green-500"/> Fuse Box Upgrades</li>
                       <li className="flex items-center"><Icons.CheckCircle className="h-4 w-4 mr-2 text-green-500"/> Yaka (UEDCL) Meter Help</li>
@@ -403,7 +404,7 @@ function App() {
                 {/* Solar */}
                 <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group border border-slate-200 flex flex-col relative">
                   <div className="absolute top-4 left-4 bg-amber-500 text-xs font-bold px-3 py-1 text-white rounded-full z-10">POPULAR</div>
-                  <div className="h-56 overflow-hidden relative">
+                  <div className="h-48 md:h-56 overflow-hidden relative">
                     <img 
                       src="/images/service-solar.jpg" 
                       alt="Solar Systems" 
@@ -414,10 +415,10 @@ function App() {
                         <Icons.Sun className="h-5 w-5" />
                     </div>
                   </div>
-                  <div className="p-8 flex flex-col flex-grow">
-                    <h3 className="text-xl font-bold text-slate-900 mb-3">Solar Systems</h3>
-                    <p className="text-slate-700 text-base leading-relaxed mb-4">Beat the load shedding. We design and install backup solar and battery inverter systems.</p>
-                    <ul className="text-base text-slate-600 space-y-2 font-medium mt-auto">
+                  <div className="p-5 md:p-8 flex flex-col flex-grow">
+                    <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-3">Solar Systems</h3>
+                    <p className="text-slate-700 text-sm md:text-base leading-relaxed mb-4">Beat the load shedding. We design and install backup solar and battery inverter systems.</p>
+                    <ul className="text-sm md:text-base text-slate-600 space-y-2 font-medium mt-auto">
                       <li className="flex items-center"><Icons.CheckCircle className="h-4 w-4 mr-2 text-green-500"/> Panel Installation</li>
                       <li className="flex items-center"><Icons.CheckCircle className="h-4 w-4 mr-2 text-green-500"/> Battery Backups</li>
                       <li className="flex items-center"><Icons.CheckCircle className="h-4 w-4 mr-2 text-green-500"/> Hybrid Inverters</li>
@@ -427,7 +428,7 @@ function App() {
 
                 {/* 3 Phase Systems */}
                 <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group border border-slate-200 flex flex-col">
-                  <div className="h-56 overflow-hidden relative">
+                  <div className="h-48 md:h-56 overflow-hidden relative">
                     <img 
                       src="/images/service-commercial.jpg" 
                       alt="3 Phase Systems" 
@@ -438,10 +439,10 @@ function App() {
                         <Icons.LayoutDashboard className="h-5 w-5" />
                     </div>
                   </div>
-                  <div className="p-8 flex flex-col flex-grow">
-                    <h3 className="text-xl font-bold text-slate-900 mb-3">3 Phase Systems</h3>
-                    <p className="text-slate-700 text-base leading-relaxed mb-4">Specialized setup and troubleshooting for industrial and commercial 3-phase power systems.</p>
-                    <ul className="text-base text-slate-600 space-y-2 font-medium mt-auto">
+                  <div className="p-5 md:p-8 flex flex-col flex-grow">
+                    <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-3">3 Phase Systems</h3>
+                    <p className="text-slate-700 text-sm md:text-base leading-relaxed mb-4">Specialized setup and troubleshooting for industrial and commercial 3-phase power systems.</p>
+                    <ul className="text-sm md:text-base text-slate-600 space-y-2 font-medium mt-auto">
                       <li className="flex items-center"><Icons.CheckCircle className="h-4 w-4 mr-2 text-green-500"/> Motor Installation</li>
                       <li className="flex items-center"><Icons.CheckCircle className="h-4 w-4 mr-2 text-green-500"/> Distribution Boards</li>
                       <li className="flex items-center"><Icons.CheckCircle className="h-4 w-4 mr-2 text-green-500"/> Load Balancing</li>
@@ -451,7 +452,7 @@ function App() {
 
                 {/* Generator Repair */}
                 <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group border border-slate-200 flex flex-col">
-                  <div className="h-56 overflow-hidden relative">
+                  <div className="h-48 md:h-56 overflow-hidden relative">
                     <img 
                       src="/images/service-generator.jpg" 
                       alt="Generator Repair" 
@@ -462,10 +463,10 @@ function App() {
                         <Icons.Wrench className="h-5 w-5" />
                     </div>
                   </div>
-                  <div className="p-8 flex flex-col flex-grow">
-                    <h3 className="text-xl font-bold text-slate-900 mb-3">Generator Repair</h3>
-                    <p className="text-slate-700 text-base leading-relaxed mb-4">Expert servicing for diesel and petrol generators to ensure you never go dark.</p>
-                    <ul className="text-base text-slate-600 space-y-2 font-medium mt-auto">
+                  <div className="p-5 md:p-8 flex flex-col flex-grow">
+                    <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-3">Generator Repair</h3>
+                    <p className="text-slate-700 text-sm md:text-base leading-relaxed mb-4">Expert servicing for diesel and petrol generators to ensure you never go dark.</p>
+                    <ul className="text-sm md:text-base text-slate-600 space-y-2 font-medium mt-auto">
                       <li className="flex items-center"><Icons.CheckCircle className="h-4 w-4 mr-2 text-green-500"/> ATS Installation</li>
                       <li className="flex items-center"><Icons.CheckCircle className="h-4 w-4 mr-2 text-green-500"/> Routine Servicing</li>
                       <li className="flex items-center"><Icons.CheckCircle className="h-4 w-4 mr-2 text-green-500"/> Emergency Repairs</li>
@@ -475,7 +476,7 @@ function App() {
 
                 {/* General Maintenance */}
                 <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group border border-slate-200 flex flex-col">
-                  <div className="h-56 overflow-hidden relative">
+                  <div className="h-48 md:h-56 overflow-hidden relative">
                     <img 
                       src="/images/service-maintenance.jpg" 
                       alt="General Maintenance" 
@@ -486,10 +487,10 @@ function App() {
                         <Icons.Lightbulb className="h-5 w-5" />
                     </div>
                   </div>
-                  <div className="p-8 flex flex-col flex-grow">
-                    <h3 className="text-xl font-bold text-slate-900 mb-3">General Maintenance</h3>
-                    <p className="text-slate-700 text-base leading-relaxed mb-4">Quick troubleshooting for power outages, short circuits, and faulty appliances.</p>
-                    <ul className="text-base text-slate-600 space-y-2 font-medium mt-auto">
+                  <div className="p-5 md:p-8 flex flex-col flex-grow">
+                    <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-3">General Maintenance</h3>
+                    <p className="text-slate-700 text-sm md:text-base leading-relaxed mb-4">Quick troubleshooting for power outages, short circuits, and faulty appliances.</p>
+                    <ul className="text-sm md:text-base text-slate-600 space-y-2 font-medium mt-auto">
                       <li className="flex items-center"><Icons.CheckCircle className="h-4 w-4 mr-2 text-green-500"/> 24/7 Emergency</li>
                       <li className="flex items-center"><Icons.CheckCircle className="h-4 w-4 mr-2 text-green-500"/> Fault Finding</li>
                     </ul>
@@ -498,7 +499,7 @@ function App() {
 
                 {/* CCTV & Security */}
                 <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group border border-slate-200 flex flex-col">
-                  <div className="h-56 overflow-hidden relative">
+                  <div className="h-48 md:h-56 overflow-hidden relative">
                     <img 
                       src="/images/service-security.jpg" 
                       alt="CCTV & Security" 
@@ -509,10 +510,10 @@ function App() {
                         <Icons.Video className="h-5 w-5" />
                     </div>
                   </div>
-                  <div className="p-8 flex flex-col flex-grow">
-                    <h3 className="text-xl font-bold text-slate-900 mb-3">CCTV & Security</h3>
-                    <p className="text-slate-700 text-base leading-relaxed mb-4">Protect your property with expert installation of surveillance cameras and security alarm systems.</p>
-                    <ul className="text-base text-slate-600 space-y-2 font-medium mt-auto">
+                  <div className="p-5 md:p-8 flex flex-col flex-grow">
+                    <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-3">CCTV & Security</h3>
+                    <p className="text-slate-700 text-sm md:text-base leading-relaxed mb-4">Protect your property with expert installation of surveillance cameras and security alarm systems.</p>
+                    <ul className="text-sm md:text-base text-slate-600 space-y-2 font-medium mt-auto">
                       <li className="flex items-center"><Icons.CheckCircle className="h-4 w-4 mr-2 text-green-500"/> HD Camera Setup</li>
                       <li className="flex items-center"><Icons.CheckCircle className="h-4 w-4 mr-2 text-green-500"/> Motion Alarms</li>
                       <li className="flex items-center"><Icons.CheckCircle className="h-4 w-4 mr-2 text-green-500"/> Remote Monitoring</li>
@@ -525,24 +526,24 @@ function App() {
               <div className="mt-12 text-center">
                 <button 
                   onClick={() => setPage(Page.SERVICES)}
-                  className="inline-flex items-center px-8 py-3 border-2 border-amber-500 text-amber-600 font-bold rounded-lg hover:bg-amber-500 hover:text-white transition group"
+                  className="inline-flex items-center px-6 py-3 border-2 border-amber-500 text-amber-600 font-bold rounded-lg hover:bg-amber-500 hover:text-white transition group text-sm md:text-base"
                 >
                   View All Services Details
-                  <Icons.ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  <Icons.ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1" />
                 </button>
               </div>
             </div>
           </section>
 
           {/* Recent Projects Section - Updated to 6 Local Images */}
-          <section id="projects" className="py-20 bg-slate-50 scroll-mt-24">
+          <section id="projects" className="py-12 md:py-20 bg-slate-50 scroll-mt-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-16">
+              <div className="text-center mb-10 md:mb-16">
                 <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Recent Projects we have worked on</h2>
                 <div className="h-1.5 w-24 bg-amber-50 mx-auto rounded-full mb-6 flex items-center justify-center">
                   <div className="h-full w-1/3 bg-amber-500 rounded-full"></div>
                 </div>
-                <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
                   See our workmanship in action. From residential upgrades to industrial installations.
                 </p>
               </div>
@@ -551,7 +552,7 @@ function App() {
                 {projects.map((project, index) => (
                   <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col group border border-slate-100">
                     <div 
-                      className="relative h-64 overflow-hidden cursor-pointer"
+                      className="relative h-56 md:h-64 overflow-hidden cursor-pointer"
                       onClick={() => setSelectedImage(project.image)}
                     >
                       <img 
@@ -567,17 +568,17 @@ function App() {
                         {project.category}
                       </div>
                     </div>
-                    <div className="p-6 flex flex-col flex-grow">
+                    <div className="p-5 md:p-6 flex flex-col flex-grow">
                       <div className="flex items-center text-slate-500 text-sm mb-2">
                         <Icons.MapPin className="h-4 w-4 mr-1 text-amber-500" />
                         {project.location}
                       </div>
-                      <h3 className="text-xl font-bold text-slate-900 mb-6">{project.title}</h3>
+                      <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-6">{project.title}</h3>
                       
                       <a 
                         href="#quote" 
                         onClick={scrollToQuote} 
-                        className="mt-auto w-full block text-center bg-slate-50 hover:bg-slate-900 text-slate-800 hover:text-white border border-slate-200 hover:border-slate-900 font-bold py-3 rounded-lg transition-colors duration-300"
+                        className="mt-auto w-full block text-center bg-slate-50 hover:bg-slate-900 text-slate-800 hover:text-white border border-slate-200 hover:border-slate-900 font-bold py-3 rounded-lg transition-colors duration-300 text-sm md:text-base"
                       >
                         Get a Quote
                       </a>
@@ -589,68 +590,68 @@ function App() {
           </section>
 
           {/* Why Choose Us */}
-          <section id="about" className="py-20 bg-slate-900 text-white relative scroll-mt-24">
+          <section id="about" className="py-12 md:py-20 bg-slate-900 text-white relative scroll-mt-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex flex-col lg:flex-row gap-12 mb-20">
+              <div className="flex flex-col lg:flex-row gap-8 md:gap-12 mb-12 md:mb-20">
                 <div className="lg:w-1/2">
                   <img 
                     src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=800&h=600" 
                     alt="Dynawatt Engineer inspecting equipment" 
-                    className="rounded-xl shadow-2xl border-4 border-slate-700 object-cover w-full h-full min-h-[400px]"
+                    className="rounded-xl shadow-2xl border-4 border-slate-700 object-cover w-full h-full min-h-[300px] md:min-h-[400px]"
                   />
                 </div>
 
                 <div className="lg:w-1/2 flex flex-col justify-center">
                   <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose DYNAWATT?</h2>
-                  <p className="text-slate-300 mb-8 text-lg leading-relaxed">
+                  <p className="text-slate-300 mb-8 text-base md:text-lg leading-relaxed">
                     At Dynawatt Engineering, we believe that good electrical work goes unnoticed, while bad electrical work can be a disaster. We bridge the gap between technical expertise and customer peace of mind.
                   </p>
                   
-                  <div className="grid grid-cols-1 gap-8">
+                  <div className="grid grid-cols-1 gap-6 md:gap-8">
                     <div className="flex">
                       <div className="flex-shrink-0">
-                        <div className="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center border border-slate-700">
-                          <Icons.Award className="h-6 w-6 text-amber-500" />
+                        <div className="w-10 h-10 md:w-12 md:h-12 bg-slate-800 rounded-lg flex items-center justify-center border border-slate-700">
+                          <Icons.Award className="h-5 w-5 md:h-6 md:w-6 text-amber-500" />
                         </div>
                       </div>
                       <div className="ml-4">
-                        <h4 className="text-xl font-bold mb-1">Uncompromising Quality</h4>
+                        <h4 className="text-lg md:text-xl font-bold mb-1">Uncompromising Quality</h4>
                         <p className="text-slate-400 text-sm">We strictly adhere to international safety standards (BS 7671). We don't take shortcuts with your safety.</p>
                       </div>
                     </div>
 
                     <div className="flex">
                       <div className="flex-shrink-0">
-                        <div className="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center border border-slate-700">
-                          <Icons.Package className="h-6 w-6 text-amber-500" />
+                        <div className="w-10 h-10 md:w-12 md:h-12 bg-slate-800 rounded-lg flex items-center justify-center border border-slate-700">
+                          <Icons.Package className="h-5 w-5 md:h-6 md:w-6 text-amber-500" />
                         </div>
                       </div>
                       <div className="ml-4">
-                        <h4 className="text-xl font-bold mb-1">Material Supply & Sourcing</h4>
+                        <h4 className="text-lg md:text-xl font-bold mb-1">Material Supply & Sourcing</h4>
                         <p className="text-slate-400 text-sm">We source authentic, high-quality materials directly from trusted suppliers. We handle the logistics so you don't worry about counterfeits.</p>
                       </div>
                     </div>
 
                     <div className="flex">
                       <div className="flex-shrink-0">
-                        <div className="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center border border-slate-700">
-                          <Icons.Clock className="h-6 w-6 text-amber-500" />
+                        <div className="w-10 h-10 md:w-12 md:h-12 bg-slate-800 rounded-lg flex items-center justify-center border border-slate-700">
+                          <Icons.Clock className="h-5 w-5 md:h-6 md:w-6 text-amber-500" />
                         </div>
                       </div>
                       <div className="ml-4">
-                        <h4 className="text-xl font-bold mb-1">Great Work Ethic</h4>
+                        <h4 className="text-lg md:text-xl font-bold mb-1">Great Work Ethic</h4>
                         <p className="text-slate-400 text-sm">Our engineers are professional, uniformed, and punctual. We treat your property with respect and clean up after every job.</p>
                       </div>
                     </div>
 
                     <div className="flex">
                       <div className="flex-shrink-0">
-                        <div className="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center border border-slate-700">
-                          <Icons.Wallet className="h-6 w-6 text-amber-500" />
+                        <div className="w-10 h-10 md:w-12 md:h-12 bg-slate-800 rounded-lg flex items-center justify-center border border-slate-700">
+                          <Icons.Wallet className="h-5 w-5 md:h-6 md:w-6 text-amber-500" />
                         </div>
                       </div>
                       <div className="ml-4">
-                        <h4 className="text-xl font-bold mb-1">Value for Money</h4>
+                        <h4 className="text-lg md:text-xl font-bold mb-1">Value for Money</h4>
                         <p className="text-slate-400 text-sm">Transparent pricing in UGX with no hidden costs. We design efficient systems that perform better and last longer, saving you money.</p>
                       </div>
                     </div>
@@ -659,7 +660,7 @@ function App() {
                   <div className="mt-10">
                     <button 
                       onClick={() => window.location.href = `tel:${config.contactPhone.replace(/[^0-9+]/g, '')}`}
-                      className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-3 px-8 rounded-lg transition"
+                      className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-3 px-8 rounded-lg transition w-full md:w-auto"
                     >
                       Contact Us Today
                     </button>
@@ -676,37 +677,37 @@ function App() {
           <FAQ />
 
           {/* Customer Reviews Section */}
-          <section id="reviews" className="py-20 bg-white scroll-mt-24">
+          <section id="reviews" className="py-12 md:py-20 bg-white scroll-mt-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-16">
+              <div className="text-center mb-10 md:mb-16">
                 <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">What Our Clients Say</h2>
                 <div className="h-1.5 w-24 bg-amber-50 mx-auto rounded-full mb-6 flex items-center justify-center">
                   <div className="h-full w-1/3 bg-amber-500 rounded-full"></div>
                 </div>
-                <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
                   Trusted by homeowners and business operators across Uganda. Your satisfaction is our strongest voltage.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {reviews.map((review, index) => (
-                  <div key={index} className="bg-slate-50 p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col hover:shadow-lg transition duration-300">
+                  <div key={index} className="bg-slate-50 p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col hover:shadow-lg transition duration-300">
                      <div className="flex text-amber-500 mb-6 space-x-1">
                         {[1,2,3,4,5].map(i => (
                           <Icons.Star key={i} className="h-5 w-5 fill-amber-500" />
                         ))}
                      </div>
-                     <p className="text-slate-700 italic mb-8 flex-grow leading-relaxed relative">
-                       <span className="text-6xl text-slate-200 absolute -top-6 -left-2 font-serif select-none">"</span>
+                     <p className="text-slate-700 italic mb-8 flex-grow leading-relaxed relative text-sm md:text-base">
+                       <span className="text-4xl md:text-6xl text-slate-200 absolute -top-4 -left-2 md:-top-6 font-serif select-none">"</span>
                        {review.text}
                      </p>
                      <div className="flex items-center mt-auto border-t border-slate-200 pt-6">
-                       <div className="w-12 h-12 bg-slate-900 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                       <div className="w-10 h-10 md:w-12 md:h-12 bg-slate-900 rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl mr-4">
                          {review.initial}
                        </div>
                        <div>
-                         <div className="font-bold text-slate-900">{review.name}</div>
-                         <div className="text-sm text-slate-500 flex items-center">
+                         <div className="font-bold text-slate-900 text-sm md:text-base">{review.name}</div>
+                         <div className="text-xs md:text-sm text-slate-500 flex items-center">
                            <Icons.MapPin className="h-3 w-3 mr-1" />
                            {review.location}
                          </div>
@@ -719,17 +720,17 @@ function App() {
           </section>
 
           {/* Service Areas */}
-          <section id="areas" className="py-20 bg-slate-50 scroll-mt-24 border-t border-slate-200">
+          <section id="areas" className="py-12 md:py-20 bg-slate-50 scroll-mt-24 border-t border-slate-200">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">Serving Central Uganda</h2>
-              <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-12">
+              <p className="text-base md:text-lg text-slate-600 max-w-3xl mx-auto mb-10 md:mb-12">
                 We are mobile and ready to deploy. From the heart of Kampala to the expanding suburbs of Wakiso and Mukono, our team is just a phone call away.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
                 {serviceAreas.map((zone, idx) => (
-                  <div key={idx} className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:border-amber-300 transition-colors">
-                    <h3 className="font-bold text-lg text-slate-900 mb-4 flex items-center pb-3 border-b border-slate-100">
+                  <div key={idx} className="bg-white p-5 md:p-6 rounded-xl shadow-sm border border-slate-100 hover:border-amber-300 transition-colors group">
+                    <h3 className="font-bold text-lg text-slate-900 mb-4 flex items-center pb-3 border-b border-slate-100 group-hover:text-amber-600 transition-colors">
                       <Icons.MapPin className="h-5 w-5 text-amber-500 mr-2" />
                       {zone.region}
                     </h3>
@@ -744,14 +745,14 @@ function App() {
                 ))}
               </div>
               
-              <div className="mt-12 bg-slate-900 text-white p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between shadow-xl">
+              <div className="mt-12 bg-slate-900 text-white p-6 md:p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between shadow-xl">
                 <div className="text-left mb-6 md:mb-0">
-                  <h3 className="text-2xl font-bold mb-2">Don't see your specific location?</h3>
-                  <p className="text-slate-300">We cover most areas within a 50km radius of Kampala. Call us to confirm availability.</p>
+                  <h3 className="text-xl md:text-2xl font-bold mb-2">Don't see your specific location?</h3>
+                  <p className="text-slate-300 text-sm md:text-base">We cover most areas within a 50km radius of Kampala. For large projects, we travel up country to districts like <strong>Kiboga</strong>, <strong>Mpigi</strong>, and <strong>Mukono</strong>.</p>
                 </div>
                 <a 
                   href={`tel:${config.contactPhone.replace(/[^0-9+]/g, '')}`}
-                  className="whitespace-nowrap bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-3 px-8 rounded-lg transition shadow-lg"
+                  className="whitespace-nowrap bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-3 px-8 rounded-lg transition shadow-lg w-full md:w-auto text-center"
                 >
                   Check Availability
                 </a>
@@ -785,12 +786,12 @@ function App() {
       )}
 
       {/* Footer */}
-      <footer className="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+      <footer className="bg-slate-950 text-slate-400 py-8 md:py-12 border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2">
-              <img src="/logo.png" alt="DYNAWATT ENGINEERING" className="h-20 w-auto mb-6 object-contain" />
-              <p className="mb-4 max-w-sm">Providing safe, reliable, and affordable electrical engineering solutions for Ugandan homes and businesses.</p>
+              <img src="/logo.png" alt="DYNAWATT ENGINEERING" className="h-16 md:h-20 w-auto mb-6 object-contain" />
+              <p className="mb-4 max-w-sm text-sm md:text-base">Providing safe, reliable, and affordable electrical engineering solutions for Ugandan homes and businesses.</p>
               <div className="flex space-x-4">
                 <a 
                   href="https://www.facebook.com/profile.php?id=61576719381534" 
@@ -833,7 +834,7 @@ function App() {
             
             <div>
               <h3 className="text-white font-bold mb-4">Quick Links</h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2 text-sm md:text-base">
                 <li><a href="#home" className="hover:text-amber-500">Home</a></li>
                 <li><a href="#services" className="hover:text-amber-500">Services</a></li>
                 <li><a href="#about" className="hover:text-amber-500">Why Choose Us</a></li>
@@ -843,14 +844,14 @@ function App() {
 
             <div>
               <h3 className="text-white font-bold mb-4">Contact</h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2 text-sm md:text-base">
                 <li className="flex items-center"><Icons.Phone className="h-4 w-4 mr-2"/> {config.contactPhone}</li>
                 <li className="flex items-center"><Icons.MapPin className="h-4 w-4 mr-2"/> Kampala, Uganda</li>
                 <li className="flex items-center"><Icons.CheckCircle className="h-4 w-4 mr-2"/> Mon - Sat: 8am - 6pm</li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+          <div className="border-t border-slate-800 mt-8 md:mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs md:text-sm">
             <p 
               onDoubleClick={() => setPage(Page.ADMIN)} 
               className="cursor-default select-none hover:text-slate-300 transition"
@@ -867,10 +868,10 @@ function App() {
         href={`https://wa.me/${config.whatsapp.replace(/[^0-9]/g, '')}?text=${whatsappMessage}`}
         target="_blank"
         rel="noreferrer"
-        className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition transform hover:scale-110 z-50 flex items-center justify-center group"
+        className="fixed bottom-6 right-6 bg-green-500 text-white p-3 md:p-4 rounded-full shadow-2xl hover:bg-green-600 transition transform hover:scale-110 z-50 flex items-center justify-center group"
       >
-        <Icons.MessageCircle className="h-8 w-8" />
-        <span className="absolute right-full mr-4 bg-white text-slate-800 px-3 py-1 rounded shadow-lg font-bold text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition pointer-events-none">
+        <Icons.MessageCircle className="h-6 w-6 md:h-8 md:w-8" />
+        <span className="absolute right-full mr-4 bg-white text-slate-800 px-3 py-1 rounded shadow-lg font-bold text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition pointer-events-none hidden md:block">
           Chat with us!
         </span>
       </a>

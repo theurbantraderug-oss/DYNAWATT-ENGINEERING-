@@ -60,7 +60,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ addLead }) => {
 
   if (isSubmitted) {
     return (
-      <div className="bg-green-50 p-8 rounded-xl shadow-lg text-center border border-green-200">
+      <div className="bg-green-50 p-6 md:p-8 rounded-xl shadow-lg text-center border border-green-200">
         <div className="inline-block p-4 bg-green-100 rounded-full mb-4">
           <Icons.CheckCircle className="h-12 w-12 text-green-600" />
         </div>
@@ -77,9 +77,9 @@ const LeadForm: React.FC<LeadFormProps> = ({ addLead }) => {
   }
 
   return (
-    <div id="quote" className="bg-white p-6 md:p-8 rounded-xl shadow-2xl border-t-4 border-amber-500 scroll-mt-32">
-      <h3 className="text-2xl font-bold text-slate-900 mb-2">Get a Free Quote</h3>
-      <p className="text-slate-500 mb-6">Fast response in Kampala & surrounding areas.</p>
+    <div id="quote" className="bg-white p-5 md:p-8 rounded-xl shadow-2xl border-t-4 border-amber-500 scroll-mt-32">
+      <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2">Get a Free Quote</h3>
+      <p className="text-sm md:text-base text-slate-500 mb-6">Fast response in Kampala & surrounding areas.</p>
       
       <form onSubmit={handleSubmit} className="space-y-4">
         {errorMessage && (
@@ -90,12 +90,12 @@ const LeadForm: React.FC<LeadFormProps> = ({ addLead }) => {
         )}
 
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-1">Your Name</label>
+          <label className="block text-xs md:text-sm font-medium text-slate-700 mb-1">Your Name</label>
           <input 
             required
             type="text" 
             name="name"
-            className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition bg-white text-slate-900"
+            className="w-full px-4 py-2.5 md:py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition bg-white text-slate-900 text-sm md:text-base"
             placeholder="John Doe"
             value={formData.name}
             onChange={handleChange}
@@ -103,12 +103,12 @@ const LeadForm: React.FC<LeadFormProps> = ({ addLead }) => {
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-1">Phone Number (WhatsApp)</label>
+          <label className="block text-xs md:text-sm font-medium text-slate-700 mb-1">Phone Number (WhatsApp)</label>
           <input 
             required
             type="tel" 
             name="phone"
-            className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition bg-white text-slate-900"
+            className="w-full px-4 py-2.5 md:py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition bg-white text-slate-900 text-sm md:text-base"
             placeholder="077..."
             value={formData.phone}
             onChange={handleChange}
@@ -117,10 +117,10 @@ const LeadForm: React.FC<LeadFormProps> = ({ addLead }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">Location</label>
+            <label className="block text-xs md:text-sm font-medium text-slate-700 mb-1">Location</label>
             <select 
               name="location"
-              className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 outline-none bg-white text-slate-900"
+              className="w-full px-4 py-2.5 md:py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 outline-none bg-white text-slate-900 text-sm md:text-base"
               value={formData.location}
               onChange={handleChange}
             >
@@ -137,10 +137,10 @@ const LeadForm: React.FC<LeadFormProps> = ({ addLead }) => {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">Service Needed</label>
+            <label className="block text-xs md:text-sm font-medium text-slate-700 mb-1">Service Needed</label>
             <select 
               name="serviceType"
-              className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 outline-none bg-white text-slate-900"
+              className="w-full px-4 py-2.5 md:py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 outline-none bg-white text-slate-900 text-sm md:text-base"
               value={formData.serviceType}
               onChange={handleChange}
             >
@@ -156,11 +156,11 @@ const LeadForm: React.FC<LeadFormProps> = ({ addLead }) => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-1">Describe the Issue</label>
+          <label className="block text-xs md:text-sm font-medium text-slate-700 mb-1">Describe the Issue</label>
           <textarea 
             rows={3}
             name="message"
-            className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 outline-none transition bg-white text-slate-900"
+            className="w-full px-4 py-2.5 md:py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 outline-none transition bg-white text-slate-900 text-sm md:text-base"
             placeholder="e.g. No power in the kitchen, sparks from socket..."
             value={formData.message}
             onChange={handleChange}
@@ -170,7 +170,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ addLead }) => {
         <button 
           type="submit" 
           disabled={isSubmitting}
-          className={`w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 rounded-lg shadow-lg transition transform active:scale-95 flex justify-center items-center ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+          className={`w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 md:py-4 rounded-lg shadow-lg transition transform active:scale-95 flex justify-center items-center text-sm md:text-base ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
         >
           {isSubmitting ? (
             <>

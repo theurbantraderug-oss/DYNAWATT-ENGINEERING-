@@ -13,7 +13,7 @@ const Navbar: React.FC<NavbarProps> = ({ setPage, contactPhone }) => {
   const [logoError, setLogoError] = useState(false);
   const whatsappMessage = encodeURIComponent("Hello, Im interested in working with DYNAWATT ENGINEERING. Is anyone available to chat");
 
-  const navbarHeight = 80; // Height of the fixed navbar
+  const navbarHeight = 80; // Height of the fixed navbar (desktop reference)
 
   // Handle scroll spy to update active section
   useEffect(() => {
@@ -52,8 +52,11 @@ const Navbar: React.FC<NavbarProps> = ({ setPage, contactPhone }) => {
     setTimeout(() => {
       const element = document.getElementById(id);
       if (element) {
+        // Adjust offset based on screen size (smaller offset for mobile)
+        const isMobile = window.innerWidth < 768;
+        const currentNavHeight = isMobile ? 64 : 80;
         const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.scrollY - navbarHeight;
+        const offsetPosition = elementPosition + window.scrollY - currentNavHeight;
 
         window.scrollTo({
           top: offsetPosition,
@@ -103,7 +106,7 @@ const Navbar: React.FC<NavbarProps> = ({ setPage, contactPhone }) => {
   return (
     <nav className="bg-slate-900 text-white sticky top-0 z-50 shadow-lg border-b border-slate-800 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20 items-center">
+        <div className="flex justify-between h-16 md:h-20 items-center">
           {/* Logo */}
           <div 
             className="flex-shrink-0 flex items-center cursor-pointer group"
@@ -113,13 +116,13 @@ const Navbar: React.FC<NavbarProps> = ({ setPage, contactPhone }) => {
               <img 
                 src="/logo.png" 
                 alt="DYNAWATT ENGINEERING" 
-                className="h-16 w-auto object-contain group-hover:scale-105 transition-transform" 
+                className="h-10 md:h-16 w-auto object-contain group-hover:scale-105 transition-transform" 
                 onError={() => setLogoError(true)}
               />
             ) : (
               <div className="flex flex-col justify-center">
-                <span className="text-2xl font-bold text-white leading-none tracking-tight">DYNAWATT</span>
-                <span className="text-[10px] text-amber-500 tracking-[0.2em] font-semibold">ENGINEERING</span>
+                <span className="text-xl md:text-2xl font-bold text-white leading-none tracking-tight">DYNAWATT</span>
+                <span className="text-[9px] md:text-[10px] text-amber-500 tracking-[0.2em] font-semibold">ENGINEERING</span>
               </div>
             )}
           </div>
@@ -160,7 +163,7 @@ const Navbar: React.FC<NavbarProps> = ({ setPage, contactPhone }) => {
               className="text-gray-300 hover:text-white p-2 focus:outline-none"
               aria-label="Toggle menu"
             >
-              {isOpen ? <Icons.X className="h-8 w-8" /> : <Icons.Menu className="h-8 w-8" />}
+              {isOpen ? <Icons.X className="h-6 w-6" /> : <Icons.Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
@@ -172,7 +175,7 @@ const Navbar: React.FC<NavbarProps> = ({ setPage, contactPhone }) => {
           isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="px-4 py-6 space-y-2">
+        <div className="px-4 py-4 space-y-1">
           <NavLink id="home" label="Home" isMobile />
           <NavLink id="services" label="Services" isMobile />
           <NavLink id="about" label="About Us" isMobile />
@@ -180,13 +183,13 @@ const Navbar: React.FC<NavbarProps> = ({ setPage, contactPhone }) => {
           <NavLink id="areas" label="Service Areas" isMobile />
           <NavLink id="quote" label="Contact" isMobile />
           
-          <div className="flex flex-col gap-3 mt-6 pt-6 border-t border-slate-800">
+          <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-slate-800">
             <a 
               href={`tel:${contactPhone.replace(/[^0-9+]/g, '')}`}
-              className="w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-3 rounded-lg flex justify-center items-center transition shadow-lg active:scale-95"
+              className="w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-3 rounded-lg flex justify-center items-center transition shadow-lg active:scale-95 text-sm"
               onClick={() => setIsOpen(false)}
             >
-              <Icons.Phone className="h-5 w-5 mr-2" />
+              <Icons.Phone className="h-4 w-4 mr-2" />
               Call Now
             </a>
             <a 
@@ -194,9 +197,9 @@ const Navbar: React.FC<NavbarProps> = ({ setPage, contactPhone }) => {
                target="_blank"
                rel="noreferrer"
                onClick={() => setIsOpen(false)}
-               className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg flex justify-center items-center transition shadow-lg active:scale-95"
+               className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg flex justify-center items-center transition shadow-lg active:scale-95 text-sm"
             >
-              <Icons.MessageCircle className="h-5 w-5 mr-2" />
+              <Icons.MessageCircle className="h-4 w-4 mr-2" />
               WhatsApp Us
             </a>
           </div>
