@@ -150,6 +150,34 @@ function App() {
     }
   ];
 
+  // Grouped areas for better display and structure
+  const serviceAreas = [
+    {
+      region: "Kira & Namugongo Area",
+      areas: ["Kira", "Kyanja", "Namugongo", "Najjera", "Bulindo", "Kiwatule", "Kitukutwe", "Kitifumba", "Bulwada", "Bulabira"]
+    },
+    {
+      region: "Entebbe Road Corridor",
+      areas: ["Entebbe", "Kisubi", "Kawuku", "Kajjansi", "Lweza", "Seguku", "Zanna", "Katale", "Dewe", "Bwebajja"]
+    },
+    {
+      region: "Makindye & Ggaba Road",
+      areas: ["Makindye", "Munyonyo", "Ggaba", "Buziga", "Bunga", "Kansanga", "Kabalagala", "Muyenga", "Bukaasa", "Nsambya", "Kibuli", "Salama", "Konge", "Busabala"]
+    },
+    {
+      region: "Northern Bypass & East",
+      areas: ["Ntinda", "Bukoto", "Kisasi", "Bweyogerere", "Butabika", "Luzira", "Mutungo", "Kitintale", "Bugolobi", "Mbuya", "Bukerere"]
+    },
+    {
+      region: "Gayaza & Northern",
+      areas: ["Gayaza", "Kasangati", "Kiwenda", "Mpererwe", "Kanyanya", "Bahai", "Kabuuma", "Maganjo", "Matugga"]
+    },
+    {
+      region: "Masaka Road & West",
+      areas: ["Mpigi", "Kyengera", "Kitemu", "Nansana", "Busega", "Bulenga", "Kibiri", "Gangu"]
+    }
+  ];
+
   if (page === Page.ADMIN) {
     if (!isAuthenticated) {
       return (
@@ -691,15 +719,42 @@ function App() {
           </section>
 
           {/* Service Areas */}
-          <section id="areas" className="py-16 bg-slate-50 scroll-mt-24">
-            <div className="max-w-7xl mx-auto px-4 text-center">
-              <h2 className="text-2xl font-bold text-slate-800 mb-8">Serving All Key Areas</h2>
-              <div className="flex flex-wrap justify-center gap-4">
-                {['Kampala', 'Entebbe', 'Mukono', 'Wakiso', 'Jinja', 'Gayaza', 'Ntinda', 'Kololo'].map((area) => (
-                  <span key={area} className="px-6 py-2 bg-white rounded-full text-slate-600 shadow-sm border border-slate-200">
-                    {area}
-                  </span>
+          <section id="areas" className="py-20 bg-slate-50 scroll-mt-24 border-t border-slate-200">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">Serving Central Uganda</h2>
+              <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-12">
+                We are mobile and ready to deploy. From the heart of Kampala to the expanding suburbs of Wakiso and Mukono, our team is just a phone call away.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+                {serviceAreas.map((zone, idx) => (
+                  <div key={idx} className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:border-amber-300 transition-colors">
+                    <h3 className="font-bold text-lg text-slate-900 mb-4 flex items-center pb-3 border-b border-slate-100">
+                      <Icons.MapPin className="h-5 w-5 text-amber-500 mr-2" />
+                      {zone.region}
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {zone.areas.map((area) => (
+                        <span key={area} className="px-3 py-1 bg-slate-50 text-slate-600 text-sm rounded-md border border-slate-100 hover:bg-amber-50 hover:text-amber-800 hover:border-amber-200 transition cursor-default">
+                          {area}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 ))}
+              </div>
+              
+              <div className="mt-12 bg-slate-900 text-white p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between shadow-xl">
+                <div className="text-left mb-6 md:mb-0">
+                  <h3 className="text-2xl font-bold mb-2">Don't see your specific location?</h3>
+                  <p className="text-slate-300">We cover most areas within a 50km radius of Kampala. Call us to confirm availability.</p>
+                </div>
+                <a 
+                  href={`tel:${config.contactPhone.replace(/[^0-9+]/g, '')}`}
+                  className="whitespace-nowrap bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-3 px-8 rounded-lg transition shadow-lg"
+                >
+                  Check Availability
+                </a>
               </div>
             </div>
           </section>
