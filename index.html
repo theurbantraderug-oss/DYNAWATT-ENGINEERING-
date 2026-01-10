@@ -51,6 +51,7 @@
       "@context": "https://schema.org",
       "@type": "Electrician",
       "name": "Dynawatt Engineering",
+      "description": "Professional electrical engineering, smart lighting, and solar solutions serving the greater Kampala region.",
       "image": "https://dynawattengineering.com/logo.png",
       "@id": "https://dynawattengineering.com/#organization",
       "url": "https://dynawattengineering.com/",
@@ -58,45 +59,47 @@
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Central Region",
         "addressLocality": "Kampala",
         "addressRegion": "Central",
         "addressCountry": "UG"
       },
       "geo": {
-        "@type": "GeoCircle",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Electrical Installations and Repairs"
-        },
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": 0.3476,
-          "longitude": 32.5825
-        },
-        "geoRadius": "50000"
+        "@type": "GeoCoordinates",
+        "latitude": 0.3476,
+        "longitude": 32.5825
       },
       "areaServed": [
-        "Kampala", "Wakiso", "Mukono", "Entebbe", 
-        "Kyanja", "Bulindo", "Kira", "Bulwada", "Kisasi", "Bukoto", "Ntinda", 
-        "Namugongo", "Bukerere", "Bweyogerere", "Kitukutwe", "Kitifumba", 
-        "Gayaza", "Kiwenda", "Kasangati", "Kiwatule", "Najjera", "Nsambya", 
-        "Kibuli", "Mbuya", "Muyenga", "Bukaasa", "Kabalagala", "Kansanga", 
-        "Bunga", "Ggaba", "Buziga", "Munyonyo", "Busabala", "Kibiri", "Gangu", 
-        "Kabuuma", "Salama", "Makindye", "Konge", "Zanna", "Kajjansi", "Lweza", 
-        "Seguku", "Katale", "Kawuku", "Kisubi", "Dewe", "Mpigi", "Kyengera", 
-        "Kitemu", "Nansana", "Mpererwe", "Kanyanya", "Bahai", "Mutungo", 
-        "Luzira", "Butabika", "Kitintale", "Bugolobi", "Bulabira", "Seeta", "Kisoga", "Mukono Town",
-        "Ndejje", "Kibiiri", "Kawempe", "Buloba", "Kigogwa", "Buyala", "Masajja", "Namasuba", "Kiteezi", "Kiboga"
-      ],
-      "openingHoursSpecification": [
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          "opens": "08:00",
-          "closes": "18:00"
+          "@type": "AdministrativeArea",
+          "name": "Kampala",
+          "containsPlace": ["Kololo", "Nakasero", "Bugolobi", "Muyenga", "Makindye", "Ggaba", "Munyonyo", "Ntinda", "Bukoto", "Luzira"]
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Wakiso",
+          "containsPlace": ["Kira", "Najjera", "Namugongo", "Kyanja", "Entebbe", "Kajjansi", "Bulenga", "Nansana", "Gayaza"]
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Mukono",
+          "containsPlace": ["Seeta", "Kisoga", "Mukono Town"]
         }
       ],
+      "knowsAbout": [
+        "Smart Lighting", 
+        "Industrial Electrical Fit-outs", 
+        "Solar Energy Systems", 
+        "Backup Generators", 
+        "Home Automation",
+        "House Wiring",
+        "Yaka Meter Troubleshooting"
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
       "sameAs": [
         "https://www.facebook.com/profile.php?id=61576719381534",
         "https://www.instagram.com/dynawattengineering?igsh=MWp5Y3R1MmkxNW0xZQ=="
