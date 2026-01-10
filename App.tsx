@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import LeadForm from './components/LeadForm';
@@ -6,6 +7,7 @@ import AdminLogin from './components/AdminLogin';
 import FAQ from './components/FAQ';
 import ServicesDetail from './components/ServicesDetail';
 import SafetyChecklist from './components/SafetyChecklist';
+import TrustpilotReviews from './components/TrustpilotReviews';
 import { Icons } from './components/Icons';
 import { Lead, Page, SiteConfig } from './types';
 
@@ -150,8 +152,6 @@ function App() {
     }
   ];
 
-  // Grouped areas for better display and structure
-  // Optimized for user scanning and local grouping
   const serviceAreas = [
     {
       region: "Kira & Namugongo Area",
@@ -367,6 +367,9 @@ function App() {
               </div>
             </div>
           </section>
+
+          {/* Trustpilot Reviews Section */}
+          <TrustpilotReviews />
 
           {/* Services Section */}
           <section id="services" className="py-12 md:py-20 bg-slate-50 scroll-mt-24">
@@ -647,7 +650,7 @@ function App() {
                     <div className="flex">
                       <div className="flex-shrink-0">
                         <div className="w-10 h-10 md:w-12 md:h-12 bg-slate-800 rounded-lg flex items-center justify-center border border-slate-700">
-                          <Icons.Wallet className="h-5 w-5 md:h-6 md:w-6 text-amber-500" />
+                          <Icons.Wallet className="h-5 w-5 md:h-6 w-6 text-amber-500" />
                         </div>
                       </div>
                       <div className="ml-4">
