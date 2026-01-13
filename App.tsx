@@ -97,10 +97,10 @@ function App() {
 
   const reviews = [
     {
-      name: "Hajji Farouk",
-      location: "Kajansi",
+      name: "Ronald Tenywa",
+      location: "Nkumba",
       text: "Excellent work installing lightning arrestors at my property. Very professional and safety-conscious team. Highly recommended.",
-      initial: "H"
+      initial: "R"
     },
     {
       name: "Aisha N.",
@@ -711,10 +711,6 @@ function App() {
           <section id="reviews" className="py-12 md:py-20 bg-white scroll-mt-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-10 md:mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">What Our Clients Say</h2>
-                <div className="h-1.5 w-24 bg-amber-50 mx-auto rounded-full mb-6 flex items-center justify-center">
-                  <div className="h-full w-1/3 bg-amber-500 rounded-full"></div>
-                </div>
                 <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
                   Trusted by homeowners and business operators across Uganda. Your satisfaction is our strongest voltage.
                 </p>
