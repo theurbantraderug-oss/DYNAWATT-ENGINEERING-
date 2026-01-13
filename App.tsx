@@ -103,6 +103,12 @@ function App() {
       initial: "R"
     },
     {
+      name: "Centenary Bank Masaka Branch",
+      location: "Masaka City",
+      text: "Highly reliable electrical maintenance for our banking facility. Their team handled our 3-phase power balancing and backup generator servicing with extreme professionalism.",
+      initial: "C"
+    },
+    {
       name: "Aisha N.",
       location: "Kawuku, Entebbe Road",
       text: "Dynawatt handled the complete wiring for my rentals. They finished on time and the workmanship is very neat.",
@@ -113,12 +119,6 @@ function App() {
       location: "Kitukutwe, Kira Municipality",
       text: "The profile lighting installed at my home is beautiful. They really know how to bring out the elegance of a house.",
       initial: "H"
-    },
-    {
-      name: "Three 60inc",
-      location: "Nkrumah Road",
-      text: "We hired them for office wiring modification and lighting for our advertising agency. Great service for businesses.",
-      initial: "T"
     },
     {
       name: "Alex",
