@@ -154,28 +154,24 @@ function App() {
 
   const serviceAreas = [
     {
-      region: "Kira & Namugongo Area",
-      areas: ["Kira", "Kyanja", "Namugongo", "Najjera", "Bulindo", "Kiwatule", "Kitukutwe", "Kitifumba", "Bulwada", "Bulabira"]
+      region: "Kampala Central",
+      areas: ["Nakasero", "Kololo", "Old Kampala", "Industrial Area"]
     },
     {
-      region: "Entebbe Rd & Ssabagabo",
-      areas: ["Entebbe", "Kisubi", "Kawuku", "Kajjansi", "Lweza", "Seguku", "Zanna", "Katale", "Dewe", "Bwebajja", "Ndejje", "Namasuba"]
+      region: "Eastern Kampala & Mukono",
+      areas: ["Bugolobi", "Mbuya", "Luzira", "Mutungo", "Seeta", "Mukono Town"]
     },
     {
-      region: "Makindye & Ggaba Road",
-      areas: ["Makindye", "Munyonyo", "Ggaba", "Buziga", "Bunga", "Kansanga", "Kabalagala", "Muyenga", "Bukaasa", "Nsambya", "Kibuli", "Salama", "Konge", "Busabala", "Kibiiri", "Gangu", "Masajja", "Kabuuma"]
+      region: "Northern Suburbs",
+      areas: ["Ntinda", "Bukoto", "Kyanja", "Najjera", "Kira", "Namugongo", "Gayaza"]
     },
     {
-      region: "Mukono & East",
-      areas: ["Mukono", "Seeta", "Kisoga", "Ntinda", "Bukoto", "Kisasi", "Bweyogerere", "Butabika", "Luzira", "Mutungo", "Kitintale", "Bugolobi", "Mbuya", "Bukerere"]
+      region: "Southern & Entebbe Road",
+      areas: ["Muyenga", "Makindye", "Munyonyo", "Kansanga", "Lweza", "Kajjansi", "Entebbe"]
     },
     {
-      region: "Gayaza & Northern",
-      areas: ["Gayaza", "Kasangati", "Kiwenda", "Mpererwe", "Kanyanya", "Bahai", "Maganjo", "Matugga", "Kawempe", "Kigogwa", "Kiteezi"]
-    },
-    {
-      region: "Western Routes (Masaka/Mityana)",
-      areas: ["Mpigi", "Kyengera", "Kitemu", "Nansana", "Busega", "Bulenga", "Buloba", "Buyala", "Kiboga"]
+      region: "Western Routes",
+      areas: ["Nansana", "Kyengera", "Bulenga", "Buloba"]
     }
   ];
 
@@ -592,6 +588,38 @@ function App() {
             </div>
           </section>
 
+          {/* Instagram Video Section */}
+          <section className="py-12 md:py-20 bg-white border-b border-slate-100">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-10 md:mb-16">
+                <div className="inline-flex items-center gap-2 p-2 px-4 bg-gradient-to-tr from-[#f09433] to-[#bc1888] rounded-full text-white font-bold text-xs md:text-sm mb-4 shadow-md">
+                  <Icons.Instagram className="h-4 w-4" />
+                  <span>Follow Our Work</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Latest from Instagram</h2>
+                <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
+                  Watch our engineering team in action. Real projects, real people, real electrical excellence.
+                </p>
+              </div>
+
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-100 bg-slate-50 min-h-[400px]">
+                <div className="elfsight-app-bb660239-ca4f-476f-8174-6add768448fd" data-elfsight-app-lazy></div>
+              </div>
+              
+              <div className="mt-10 text-center">
+                <a 
+                  href="https://www.instagram.com/dynawattengineering?igsh=MWp5Y3R1MmkxNW0xZQ==" 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="inline-flex items-center text-amber-600 font-bold hover:text-amber-700 transition"
+                >
+                  View all reels on Instagram
+                  <Icons.ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </div>
+            </div>
+          </section>
+
           {/* Why Choose Us */}
           <section id="about" className="py-12 md:py-20 bg-slate-900 text-white relative scroll-mt-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -722,13 +750,20 @@ function App() {
             </div>
           </section>
 
-          {/* Service Areas */}
+          {/* Service Areas - Updated Content */}
           <section id="areas" className="py-12 md:py-20 bg-slate-50 scroll-mt-24 border-t border-slate-200">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">Serving Central Uganda</h2>
-              <p className="text-base md:text-lg text-slate-600 max-w-3xl mx-auto mb-10 md:mb-12">
-                We are mobile and ready to deploy. From the heart of Kampala to the expanding suburbs of Wakiso and Mukono, our team is just a phone call away.
-              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 flex items-center justify-center gap-3">
+                <span className="text-amber-500">📍</span> Proudly Serving the Greater Kampala Region
+              </h2>
+              <div className="max-w-4xl mx-auto mb-10 md:mb-12 space-y-4">
+                <p className="text-base md:text-lg text-slate-600 leading-relaxed">
+                  At <strong>Dynawatt Engineering</strong>, we bring professional electrical solutions directly to your doorstep. We are fully equipped and mobile, providing world-class engineering, architectural lighting, and solar installations across <strong>Kampala, Wakiso, and Mukono.</strong>
+                </p>
+                <p className="text-base md:text-lg text-slate-600 leading-relaxed">
+                  Whether you are renovating a residence in <strong>Kololo</strong>, setting up a new office in <strong>Bugolobi</strong>, or requiring solar backup in <strong>Kira</strong>, our team is just a phone call away.
+                </p>
+              </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
                 {serviceAreas.map((zone, idx) => (
@@ -751,7 +786,9 @@ function App() {
               <div className="mt-12 bg-slate-900 text-white p-6 md:p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between shadow-xl">
                 <div className="text-left mb-6 md:mb-0">
                   <h3 className="text-xl md:text-2xl font-bold mb-2">Don't see your specific location?</h3>
-                  <p className="text-slate-300 text-sm md:text-base">We cover most areas within a 50km radius of Kampala. For large projects, we travel up country to districts like <strong>Kiboga</strong>, <strong>Mpigi</strong>, and <strong>Mukono</strong>.</p>
+                  <p className="text-slate-300 text-sm md:text-base max-w-2xl">
+                    Give us a call at <strong>+256 751 473 830</strong>. We frequently take on specialized projects further afield, including <strong>Kiboga</strong> and <strong>Mpigi</strong>, to ensure every Ugandan home and business has access to safe, reliable power.
+                  </p>
                 </div>
                 <a 
                   href={`tel:${config.contactPhone.replace(/[^0-9+]/g, '')}`}
