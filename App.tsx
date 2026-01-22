@@ -21,7 +21,7 @@ function App() {
     emergencyMode: false,
     contactPhone: '+256 751 473 830',
     whatsapp: '+256 751 473 830',
-    heroHeadline: 'DYNAWATT ENGINEERING'
+    heroHeadline: 'Dynawatt Engineering: Premier Electrical & Lighting Solutions in Uganda'
   });
 
   const [leads, setLeads] = useState<Lead[]>([]);
@@ -221,7 +221,7 @@ function App() {
                   <span className="flex h-2 w-2 rounded-full bg-amber-500 mr-2"></span>
                   DYNAWATT - Licensed & Insured
                 </div>
-                <h1 className="text-3xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
                   {config.heroHeadline}
                 </h1>
                 <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-lg">
@@ -249,116 +249,94 @@ function App() {
             </div>
           </header>
 
-          {/* Trust Badges */}
-          <div className="bg-slate-100 border-b border-slate-200">
-            <div className="max-w-7xl mx-auto px-4 py-8">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-center">
-                <div className="flex flex-col items-center">
-                  <Icons.Shield className="h-6 w-6 md:h-8 md:w-8 text-slate-400 mb-2" />
-                  <span className="font-semibold text-slate-700 text-sm md:text-base">Certified Engineers</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <Icons.Zap className="h-6 w-6 md:h-8 md:w-8 text-slate-400 mb-2" />
-                  <span className="font-semibold text-slate-700 text-sm md:text-base">24/7 Support</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <Icons.CheckCircle className="h-6 w-6 md:h-8 md:w-8 text-slate-400 mb-2" />
-                  <span className="font-semibold text-slate-700 text-sm md:text-base">Quality Guaranteed</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <Icons.MapPin className="h-6 w-6 md:h-8 md:w-8 text-slate-400 mb-2" />
-                  <span className="font-semibold text-slate-700 text-sm md:text-base">Ugandan Owned</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* New SEO Content Section: Authority & Expertise Boost */}
+          <section className="py-12 md:py-24 bg-gradient-to-b from-white to-slate-50 border-b border-slate-100 relative overflow-hidden">
+            {/* Subtle background decorative elements */}
+            <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-amber-100/30 rounded-full blur-3xl pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-64 h-64 bg-slate-200/50 rounded-full blur-2xl pointer-events-none"></div>
 
-          {/* Welcome & Guarantee Section - Enhanced */}
-          <section className="py-12 md:py-20 bg-gradient-to-b from-slate-50 to-white border-b border-slate-100">
-            <div className="max-w-5xl mx-auto px-4 text-center">
-              
-              <div className="inline-flex items-center gap-2 p-2 px-4 bg-amber-50 border border-amber-200 rounded-full text-amber-800 font-bold text-sm mb-6 md:mb-8 shadow-sm">
-                <Icons.Star className="h-4 w-4 fill-amber-500 text-amber-500" />
-                <span>Welcome to Dynawatt Engineering</span>
-              </div>
-              
-              <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight tracking-tight">
-                Certified Electrical Excellence in <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-600">Kampala & Central Uganda</span>
-              </h2>
-              
-              <p className="text-lg md:text-xl text-slate-600 mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed">
-                Your Trusted Partner for Reliable House Wiring, Security Systems, and Quality Electrical Supplies.
-              </p>
-              
-              <p className="text-slate-600 mb-10 md:mb-12 leading-relaxed text-base md:text-lg max-w-4xl mx-auto font-medium">
-                At <strong className="text-slate-900">Dynawatt Engineering</strong>, we don’t just install wires; we power your peace of mind. Whether you are building a new home in <strong className="text-slate-900">Kira</strong>, securing an industrial site in <strong className="text-slate-900">Mukono</strong>, or upgrading your lighting in <strong className="text-slate-900">Kampala</strong>, our certified team is ready to deliver.
-              </p>
-
-              <div className="bg-white border-t-4 border-amber-500 rounded-2xl p-6 md:p-12 mb-12 shadow-2xl shadow-slate-200/50 hover:shadow-amber-500/10 transition-all duration-300">
-                <h3 className="text-2xl font-bold text-slate-900 mb-8 md:mb-10 flex items-center justify-center">
-                  <div className="bg-amber-100 p-2 rounded-full mr-3">
-                    <Icons.CheckCircle className="h-6 w-6 text-amber-600" />
-                  </div>
-                  The Dynawatt Difference
-                </h3>
-                <div className="grid md:grid-cols-2 gap-x-12 gap-y-6 md:gap-y-8 text-left">
-                  <div className="flex items-start group">
-                    <div className="flex-shrink-0 bg-slate-50 p-3 rounded-xl shadow-sm mr-4 border border-slate-100 group-hover:border-amber-200 group-hover:bg-amber-50 transition-colors">
-                      <Icons.Shield className="h-6 w-6 text-amber-500" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-slate-900 text-lg mb-1">3-Month Repair Guarantee</h4>
-                      <p className="text-slate-500 text-sm leading-relaxed">We offer 3 months of free repairs on all full house wiring installations because we stand by our craftsmanship.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start group">
-                    <div className="flex-shrink-0 bg-slate-50 p-3 rounded-xl shadow-sm mr-4 border border-slate-100 group-hover:border-amber-200 group-hover:bg-amber-50 transition-colors">
-                      <Icons.Users className="h-6 w-6 text-amber-500" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-slate-900 text-lg mb-1">Personalized Service</h4>
-                      <p className="text-slate-500 text-sm leading-relaxed">We provide detailed site visits to understand your custom preferences before we even start.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start group">
-                    <div className="flex-shrink-0 bg-slate-50 p-3 rounded-xl shadow-sm mr-4 border border-slate-100 group-hover:border-amber-200 group-hover:bg-amber-50 transition-colors">
-                      <Icons.Clock className="h-6 w-6 text-amber-500" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-slate-900 text-lg mb-1">Fast & Reliable</h4>
-                      <p className="text-slate-500 text-sm leading-relaxed">From free quotations to quick online bookings, we prioritize your schedule and deadlines.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start group">
-                    <div className="flex-shrink-0 bg-slate-50 p-3 rounded-xl shadow-sm mr-4 border border-slate-100 group-hover:border-amber-200 group-hover:bg-amber-50 transition-colors">
-                      <Icons.Package className="h-6 w-6 text-amber-500" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-slate-900 text-lg mb-1">Quality Supplies</h4>
-                      <p className="text-slate-500 text-sm leading-relaxed">We supply premium cables, sockets, and luxury chandeliers (spotlights and strip lights) at competitive market prices.</p>
-                    </div>
-                  </div>
+            <div className="max-w-5xl mx-auto px-4 relative z-10">
+              <div className="text-center mb-12 md:mb-16">
+                <div className="inline-flex items-center gap-2 p-2 px-4 bg-amber-50 border border-amber-200 rounded-full text-amber-800 font-bold text-sm mb-6 shadow-sm">
+                  <Icons.Star className="h-4 w-4 fill-amber-500 text-amber-500" />
+                  <span>The Standard of Engineering in Uganda</span>
                 </div>
+                
+                <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-8 leading-tight tracking-tight">
+                  Reliable Electrical Engineering & <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-600">Modern Lighting Solutions</span>
+                </h2>
               </div>
 
-              <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-5">
+              <div className="prose prose-lg max-w-none text-slate-600 space-y-6 md:space-y-8">
+                <p className="text-lg md:text-xl leading-relaxed">
+                  At <strong>Dynawatt Engineering</strong>, we provide certified electrical solutions for residential and commercial clients across <strong>Kampala</strong> and the greater central region. 
+                  From complex industrial 3-phase wiring to high-end architectural lighting, our team ensures every project meets international safety standards while maintaining modern aesthetics.
+                </p>
+
+                <div className="grid md:grid-cols-2 gap-8 md:gap-12 py-6">
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-slate-900 flex items-center">
+                      <Icons.LayoutDashboard className="h-5 w-5 mr-2 text-amber-500" />
+                      Industrial & Commercial Depth
+                    </h3>
+                    <p className="text-sm md:text-base leading-relaxed">
+                      Our engineering expertise extends to large-scale industrial fit-outs. We specialize in 3-phase power distribution, motor control systems, and factory-grade lighting that reduces energy overheads. Businesses in <strong>Mukono</strong> and <strong>Namanve</strong> trust us for reliable maintenance that eliminates costly downtime.
+                    </p>
+                  </div>
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-slate-900 flex items-center">
+                      <Icons.Lightbulb className="h-5 w-5 mr-2 text-amber-500" />
+                      Luxury Architectural Lighting
+                    </h3>
+                    <p className="text-sm md:text-base leading-relaxed">
+                      We are the pioneers of elegant home illumination. Whether you need a <strong>floating chandelier installation in Munyonyo</strong> or sophisticated <strong>aluminum profile lighting</strong> for a penthouse in <strong>Kololo</strong>, our technicians possess the precision and architectural eye required for premium finishes.
+                    </p>
+                  </div>
+                </div>
+
+                <p className="text-lg md:text-xl leading-relaxed">
+                  Building a new home in <strong>Kira</strong> or <strong>Najjera</strong>? Our comprehensive house wiring services include a full 3-month repair guarantee. We don't just pull cables; we design systems. This includes conducting energy-saving <strong>Yaka audits</strong> to troubleshoot high consumption and installing high-performance lightning arrestors to protect your valuable electronics.
+                </p>
+
+                <p className="text-base md:text-lg leading-relaxed bg-white p-6 md:p-8 rounded-2xl border border-slate-200 shadow-sm italic">
+                  "At Dynawatt, we bridge the gap between technical complexity and customer peace of mind. We power your property with the same care we would our own homes, ensuring every joint, breaker, and fixture is a testament to Ugandan engineering excellence."
+                </p>
+              </div>
+
+              {/* The Dynawatt Difference - Compacted Grid */}
+              <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {[
+                  { title: "3-Month Repair Guarantee", desc: "On all full-house wiring projects.", icon: <Icons.Shield /> },
+                  { title: "Personalized Site Visits", desc: "Custom consulting before we start.", icon: <Icons.Users /> },
+                  { title: "24/7 Rapid Response", desc: "Emergency help when you need it.", icon: <Icons.Clock /> },
+                  { title: "Premium Material Supply", desc: "Only certified cables and fixtures.", icon: <Icons.Package /> }
+                ].map((item, i) => (
+                  <div key={i} className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:border-amber-200 transition-all group">
+                    <div className="text-amber-500 mb-4 group-hover:scale-110 transition-transform">
+                      {React.cloneElement(item.icon as React.ReactElement, { className: "h-8 w-8" })}
+                    </div>
+                    <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
+                    <p className="text-sm text-slate-500">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-16 flex flex-col sm:flex-row justify-center gap-4 md:gap-5">
                 <a 
                   href="#quote" 
                   onClick={scrollToQuote}
-                  className="group inline-flex justify-center items-center px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-bold rounded-xl text-slate-900 bg-amber-500 hover:bg-amber-400 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 ring-4 ring-amber-500/20"
+                  className="group inline-flex justify-center items-center px-6 py-4 md:px-10 text-base md:text-lg font-bold rounded-xl text-slate-900 bg-amber-500 hover:bg-amber-400 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 ring-4 ring-amber-500/20"
                 >
-                  <span className="flex items-center">
-                    Get a Free Quotation
-                    <Icons.ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </span>
+                  Get a Free Quotation
+                  <Icons.ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </a>
                 
                 <a 
                   href={`tel:${config.contactPhone.replace(/[^0-9+]/g, '')}`} 
-                  className="group inline-flex justify-center items-center px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-bold rounded-xl text-white bg-slate-900 hover:bg-slate-800 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
+                  className="group inline-flex justify-center items-center px-6 py-4 md:px-10 text-base md:text-lg font-bold rounded-xl text-white bg-slate-900 hover:bg-slate-800 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
                 >
                   <Icons.Phone className="h-5 w-5 mr-2 group-hover:animate-bounce" />
-                  Call Us: {config.contactPhone}
+                  {config.contactPhone}
                 </a>
               </div>
             </div>
