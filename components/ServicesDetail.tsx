@@ -13,67 +13,55 @@ const ServicesDetail: React.FC<ServicesDetailProps> = ({ setPage }) => {
 
   const detailedServices = [
     {
-      title: "Residential Electrical Services",
-      description: "We provide comprehensive electrical solutions for homes in Uganda, ensuring safety, functionality, and aesthetics. Whether you are building a new home or upgrading an old one, our certified team handles everything.",
-      icon: <Icons.Home className="h-10 w-10 md:h-12 md:w-12 text-amber-500" />,
+      title: "Electrical Installation",
+      description: "We offer professional electrical installation services in Kampala and across Uganda, ensuring safe and efficient systems for homes and businesses.",
+      icon: <Icons.Zap className="h-10 w-10 md:h-12 md:w-12 text-amber-500" />,
       features: [
-        "Full House Wiring (First & Second Fix)",
-        "Consumer Unit (Fuse Box) Upgrades",
+        "House wiring and rewiring",
+        "Office electrical systems",
+        "Industrial installations",
+        "Distribution board installation",
         "Chandelier & Mood Lighting Installation",
-        "Socket & Switch Additions",
-        "Earthing & Lightning Protection Systems",
-        "Yaka (UEDCL) Meter Troubleshooting"
+        "Earthing & Lightning Protection"
       ]
     },
     {
-      title: "Solar & Power Backup",
-      description: "Say goodbye to load shedding. We design and install robust power backup systems tailored to your energy needs. From simple inverter setups to full off-grid solar plants.",
+      title: "Solar Installation",
+      description: "DYNAWATT ENGINEERING provides reliable solar installation services in Uganda to reduce electricity costs and improve energy reliability.",
       icon: <Icons.Sun className="h-10 w-10 md:h-12 md:w-12 text-amber-500" />,
       features: [
-        "Solar Panel Installation (Roof/Ground)",
-        "Hybrid & Off-Grid Inverter Systems",
-        "Battery Bank Setup (Lithium/Gel/Tubular)",
-        "Automatic Transfer Switches (ATS)",
-        "Solar Water Heating Integration",
-        "System Sizing & Consultation"
+        "Solar panel installation",
+        "Battery storage systems",
+        "Inverter installation",
+        "System design and consultation",
+        "Solar water heating",
+        "Maintenance & cleaning"
       ]
     },
     {
-      title: "Commercial & Industrial",
-      description: "Heavy-duty electrical engineering for factories, offices, and commercial buildings requiring 3-phase power. We ensure your business runs efficiently with minimal downtime.",
-      icon: <Icons.LayoutDashboard className="h-10 w-10 md:h-12 md:w-12 text-amber-500" />,
-      features: [
-        "3-Phase Power Distribution",
-        "Industrial Motor Installation & Control",
-        "Office Data & Power Trunking",
-        "High-Bay Factory Lighting",
-        "Power Factor Correction",
-        "Emergency Lighting Systems"
-      ]
-    },
-    {
-      title: "Security & Surveillance",
-      description: "Protect your assets with modern security technology installed by certified professionals. Monitor your property from anywhere in the world right from your phone.",
-      icon: <Icons.Video className="h-10 w-10 md:h-12 md:w-12 text-amber-500" />,
-      features: [
-        "CCTV Camera Systems (IP & Analog)",
-        "Remote Mobile Monitoring Setup",
-        "Electric Fencing Installation",
-        "Video Door Phones & Intercoms",
-        "Motion Sensor Security Lights",
-        "Access Control Systems"
-      ]
-    },
-    {
-      title: "Generator Services",
-      description: "Maintenance and repair services for all generator sizes to keep your backup power reliable. We service Perkins, Cummins, and smaller petrol generators.",
+      title: "Repairs & Maintenance",
+      description: "Our team provides quick and effective repair services to resolve electrical faults and maintain system performance.",
       icon: <Icons.Wrench className="h-10 w-10 md:h-12 md:w-12 text-amber-500" />,
       features: [
-        "Routine Servicing (Oil/Filter Changes)",
-        "AVR Replacement & Troubleshooting",
-        "Generator Installation & Commissioning",
-        "Control Panel Repairs",
-        "Fuel System Cleaning"
+        "Fast fault detection",
+        "Yaka meter troubleshooting",
+        "Generator servicing",
+        "Routine system maintenance",
+        "Emergency electrical repairs",
+        "Safety inspections"
+      ]
+    },
+    {
+      title: "Smart Home Installation",
+      description: "Upgrade your property with smart systems that improve convenience, security, and energy efficiency.",
+      icon: <Icons.Home className="h-10 w-10 md:h-12 md:w-12 text-amber-500" />,
+      features: [
+        "Smart lighting control",
+        "Automated security systems",
+        "Energy monitoring",
+        "Remote access setup",
+        "Smart thermostat installation",
+        "Home theater & audio"
       ]
     }
   ];
@@ -83,9 +71,9 @@ const ServicesDetail: React.FC<ServicesDetailProps> = ({ setPage }) => {
       {/* Header */}
       <div className="bg-slate-900 text-white pt-24 pb-12 md:pt-32 md:pb-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-4 md:mb-6 tracking-tight">Our Services</h1>
+          <h1 className="text-3xl md:text-5xl font-extrabold mb-4 md:mb-6 tracking-tight">Electrical & Solar Services in Kampala, Uganda</h1>
           <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto">
-            Professional, Safe, and Reliable Electrical Engineering Solutions for Uganda.
+            Professional, Safe, and Reliable Engineering Solutions for Homes and Businesses.
           </p>
         </div>
       </div>

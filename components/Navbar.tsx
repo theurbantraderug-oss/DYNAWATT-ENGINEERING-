@@ -4,10 +4,11 @@ import { Page } from '../types';
 
 interface NavbarProps {
   setPage: (page: Page) => void;
+  page: Page;
   contactPhone: string;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ setPage, contactPhone }) => {
+const Navbar: React.FC<NavbarProps> = ({ setPage, page, contactPhone }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [logoError, setLogoError] = useState(false);
@@ -130,11 +131,12 @@ const Navbar: React.FC<NavbarProps> = ({ setPage, contactPhone }) => {
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-1 lg:space-x-2 items-center">
             <NavLink id="home" label="Home" />
-            <NavLink id="services" label="Services" />
-            <NavLink id="about" label="About" />
-            <NavLink id="reviews" label="Reviews" />
-            <NavLink id="areas" label="Areas" />
-            <NavLink id="quote" label="Contact" />
+            <button onClick={() => setPage(Page.SERVICES)} className={`px-3 py-2 transition-colors duration-300 ${page === Page.SERVICES ? 'text-amber-500 font-medium' : 'text-gray-100 hover:text-amber-500'}`}>Services</button>
+            <button onClick={() => setPage(Page.SOLAR)} className={`px-3 py-2 transition-colors duration-300 ${page === Page.SOLAR ? 'text-amber-500 font-medium' : 'text-gray-100 hover:text-amber-500'}`}>Solar</button>
+            <button onClick={() => setPage(Page.ABOUT)} className={`px-3 py-2 transition-colors duration-300 ${page === Page.ABOUT ? 'text-amber-500 font-medium' : 'text-gray-100 hover:text-amber-500'}`}>About</button>
+            <button onClick={() => setPage(Page.LOCATION)} className={`px-3 py-2 transition-colors duration-300 ${page === Page.LOCATION ? 'text-amber-500 font-medium' : 'text-gray-100 hover:text-amber-500'}`}>Location</button>
+            <button onClick={() => setPage(Page.BLOG)} className={`px-3 py-2 transition-colors duration-300 ${page === Page.BLOG ? 'text-amber-500 font-medium' : 'text-gray-100 hover:text-amber-500'}`}>Blog</button>
+            <button onClick={() => setPage(Page.CONTACT)} className={`px-3 py-2 transition-colors duration-300 ${page === Page.CONTACT ? 'text-amber-500 font-medium' : 'text-gray-100 hover:text-amber-500'}`}>Contact</button>
             
             <div className="flex items-center space-x-2 lg:space-x-3 ml-2 lg:ml-4 pl-2 lg:pl-4 border-l border-slate-700">
               <a 
@@ -177,11 +179,12 @@ const Navbar: React.FC<NavbarProps> = ({ setPage, contactPhone }) => {
       >
         <div className="px-4 py-4 space-y-1">
           <NavLink id="home" label="Home" isMobile />
-          <NavLink id="services" label="Services" isMobile />
-          <NavLink id="about" label="About Us" isMobile />
-          <NavLink id="reviews" label="Reviews" isMobile />
-          <NavLink id="areas" label="Service Areas" isMobile />
-          <NavLink id="quote" label="Contact" isMobile />
+          <button onClick={() => { setPage(Page.SERVICES); setIsOpen(false); }} className={`block w-full text-left py-3 px-4 rounded-lg transition-all duration-300 border-l-4 ${page === Page.SERVICES ? 'bg-amber-100 text-amber-800 border-amber-500 font-semibold' : 'border-transparent text-gray-300 hover:text-white hover:bg-slate-800'}`}>Services</button>
+          <button onClick={() => { setPage(Page.SOLAR); setIsOpen(false); }} className={`block w-full text-left py-3 px-4 rounded-lg transition-all duration-300 border-l-4 ${page === Page.SOLAR ? 'bg-amber-100 text-amber-800 border-amber-500 font-semibold' : 'border-transparent text-gray-300 hover:text-white hover:bg-slate-800'}`}>Solar</button>
+          <button onClick={() => { setPage(Page.ABOUT); setIsOpen(false); }} className={`block w-full text-left py-3 px-4 rounded-lg transition-all duration-300 border-l-4 ${page === Page.ABOUT ? 'bg-amber-100 text-amber-800 border-amber-500 font-semibold' : 'border-transparent text-gray-300 hover:text-white hover:bg-slate-800'}`}>About Us</button>
+          <button onClick={() => { setPage(Page.LOCATION); setIsOpen(false); }} className={`block w-full text-left py-3 px-4 rounded-lg transition-all duration-300 border-l-4 ${page === Page.LOCATION ? 'bg-amber-100 text-amber-800 border-amber-500 font-semibold' : 'border-transparent text-gray-300 hover:text-white hover:bg-slate-800'}`}>Location</button>
+          <button onClick={() => { setPage(Page.BLOG); setIsOpen(false); }} className={`block w-full text-left py-3 px-4 rounded-lg transition-all duration-300 border-l-4 ${page === Page.BLOG ? 'bg-amber-100 text-amber-800 border-amber-500 font-semibold' : 'border-transparent text-gray-300 hover:text-white hover:bg-slate-800'}`}>Blog</button>
+          <button onClick={() => { setPage(Page.CONTACT); setIsOpen(false); }} className={`block w-full text-left py-3 px-4 rounded-lg transition-all duration-300 border-l-4 ${page === Page.CONTACT ? 'bg-amber-100 text-amber-800 border-amber-500 font-semibold' : 'border-transparent text-gray-300 hover:text-white hover:bg-slate-800'}`}>Contact</button>
           
           <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-slate-800">
             <a 

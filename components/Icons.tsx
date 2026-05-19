@@ -39,7 +39,19 @@ import {
   Thermometer,
   Plug,
   Droplets,
-  BatteryCharging
+  BatteryCharging,
+  Send,
+  Bot,
+  Target,
+  Eye,
+  ShieldCheck,
+  TrendingDown,
+  Battery,
+  Leaf,
+  Hammer,
+  BadgeCheck,
+  Mail,
+  Calendar
 } from 'lucide-react';
 
 export const Icons = {
@@ -83,5 +95,17 @@ export const Icons = {
   Thermometer,
   Plug,
   Droplets,
-  BatteryCharging
+  BatteryCharging,
+  Send,
+  Bot,
+  Target,
+  Eye,
+  ShieldCheck,
+  TrendingDown,
+  Battery,
+  Leaf,
+  Hammer,
+  BadgeCheck,
+  Mail,
+  Calendar
 };
