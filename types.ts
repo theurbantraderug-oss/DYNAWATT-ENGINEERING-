@@ -36,5 +36,10 @@ export interface Testimonial {
 export enum Page {
   HOME = 'home',
   ADMIN = 'admin',
-  SERVICES = 'services'
+  SERVICES = 'services',
+  ABOUT = 'about',
+  SOLAR = 'solar',
+  LOCATION = 'location',
+  CONTACT = 'contact',
+  BLOG = 'blog'
 }
