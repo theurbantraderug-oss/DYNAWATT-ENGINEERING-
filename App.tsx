@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Navbar';
 import LeadForm from './components/LeadForm';
 import AdminDashboard from './components/AdminDashboard';
@@ -856,6 +857,9 @@ function App() {
           Chat with us!
         </span>
       </a>
+
+      {/* Vercel Web Analytics */}
+      <Analytics />
     </div>
   );
 }
